@@ -16,6 +16,11 @@ set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
 set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
 set :keep_releases, 5
 
+set :default_env, {
+  username: ENV["BASIC_AUTH_USER"],
+  password: ENV["BASIC_AUTH_PASSWORD"]
+}
+
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   task :restart do
