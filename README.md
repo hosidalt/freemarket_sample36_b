@@ -169,22 +169,20 @@ belongs_to :items
 |user_id|references|null: false|
 
 ### Association
-has_one :user
+belongs_to :user
 
 
 ## areasテーブル
 |Column|Type|Options|
 |------|----|-------|
 |area|string|null: false|
-|parent_id|integer||                      ＊＊＊　必要？
-|adressee_id||                            ＊＊＊　必要？
-|item_id|references|null: false|
+|parent_id|integer||
 
 ### Association
 has_many :items
 
 
-## Freight-payersテーブル
+## freight-payersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |payer|string|null: false|
@@ -196,7 +194,7 @@ has_many :shipping-methond_id, through: :freight-methods
 
 
 
-## freight_methodsテーブル
+## freight-payers_shipping-methodsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |freight-payer_id|references|null: false, unique: true|
