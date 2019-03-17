@@ -35,7 +35,7 @@
 |name|string|null: false|
 |introduce|text|null: false|
 |price|integer|null: false|
-|seller_id|integer|null: false|
+|seller_id|references|null: false|
 
 ### Association
 - has_many :comments
