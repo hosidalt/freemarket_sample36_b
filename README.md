@@ -35,12 +35,12 @@
 |name|string|null: false|
 |introduce|text|null: false|
 |price|integer|null: false|
-|seller_id|references|null: false|
+|seller_id|references|null: false, foring_key: true|
 
 ### Association
 - has_many :comments
 - has_many :item_images
-- has_many :category, through: item_categories
+- has_many :category, through: :item_categories
 - has_many :item_categories
 - belongs_to :user
 - belongs_to :status
@@ -83,8 +83,8 @@
 |category_id|references|null; false, foreing_key: true|
 
 ### Association
-- belongs_to :category, through: :item_categories
-- belongs_to :item_categories
+- belongs_to :category
+- belongs_to :item
 
 
 ## brandsテーブル
