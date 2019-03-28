@@ -13,8 +13,12 @@
 |birth_month|integer|null: false|
 |birth_day|integer|null: false|
 |credit|integer|null: false, unique: true|
+|postal_code|string|null: false|
+|prefecture|string|null :false|
+|city|string|null: false|
+|block_number|integer|null: false|
+|bilding_name|string||
 |tel|string||
-|adress|string||
 |profil-image|string||
 |profil-comment|text||
 

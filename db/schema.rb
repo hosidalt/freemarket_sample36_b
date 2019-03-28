@@ -55,8 +55,12 @@ ActiveRecord::Schema.define(version: 20190324112348) do
     t.integer  "birth_month",                                       null: false
     t.integer  "birth_day",                                         null: false
     t.integer  "credit",                                            null: false
+    t.string   "postal_code",                                       null: false
+    t.string   "prefecture",                                        null: false
+    t.string   "city",                                              null: false
+    t.integer  "block_number",                                      null: false
+    t.string   "bilding_name"
     t.string   "tel"
-    t.string   "adress"
     t.string   "profil_image"
     t.text     "profil_comment",         limit: 65535
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
