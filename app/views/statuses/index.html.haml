@@ -1,0 +1,60 @@
+.header
+  = link_to root_path do
+    = image_tag "header/logo.svg", width: "185px" , height: "49px"
+.container
+  .buy
+    .buy__heading
+      購入を確定しますか？
+    .buy__item
+      .buy__item-inner
+        .buy__item--image
+          .buy__item--image-img
+            画像
+        .buy__item--name
+          テストアイテム
+        .buy__item--form
+          .buy__item--form-price
+            ¥ 3,000-
+            %span 送料込み
+          .buy__item--form-accordion
+            ポイントはありません
+          .buy__item--form-pay
+            .buy__item--form-pay-header
+              支払い金額
+            .buy__item--form-pay-price
+              ¥ 3,000-
+          .buy__item--form-error
+            配送先と支払い方法の入力を完了してください。
+          .buy__item--form-submit
+            購入する
+    .buy__user-info
+      .buy__user-info-inner
+        .buy__user-info--header
+          配送先
+        %address.buy__user-info--text
+          大阪府大阪市○○○○○○○○○○○
+        .buy__user-info--fix
+          = link_to "変更する",root_path
+          %i.fa.fa-angle-right
+    .buy__user-info
+      .buy__user-info-inner
+        .buy__user-info--header
+          支払い方法
+        %p.buy__user-info--text
+          ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○
+        .buy__user-info--fix
+          = link_to "変更する",root_path
+          %i.fa.fa-angle-right
+.footer
+  %nav.footer__nav
+    %ul.footer_nav--list
+      %li
+        = link_to "プライバシーポリシー",   root_path
+      %li
+        = link_to "メリカリ利用規約",       root_path
+      %li
+        = link_to "特定商取引に関する表記",  root_path
+    = link_to root_path, class: "footer__logo" do
+      = image_tag "footer/logo-gray.svg", class: "footer__logo-image"
+    .footer__c
+      © 2019 Mercari
