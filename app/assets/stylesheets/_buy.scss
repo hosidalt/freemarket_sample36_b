@@ -32,7 +32,7 @@ body{
 
       &-inner{
         text-align:     center;
-        max-width:      300px;
+        max-width:      320px;
         margin:         0 auto;
 
       .buy__item--image{
@@ -73,6 +73,7 @@ body{
           padding:      16px;
           background:   #CCC;
           font-size:    14px;
+          border:       1px solid #ccc;
         }
 
         &-pay{
@@ -96,7 +97,7 @@ body{
 
         &-error{
           color:          #EA352D;
-          font-size:      13.5px;
+          font-size:      14px;
           margin:         8px 0 0;
           line-height:    1.5;
         }
