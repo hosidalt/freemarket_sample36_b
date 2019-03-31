@@ -1,13 +1,19 @@
 body{
+  color:          #333333;
   background:     #f5f5f5;
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
 
 .header{
   height:       128px;
-  text-align:   center;
-  a{
-    img{
-      margin:     40px 0 0;
+  &-logo{
+    padding-top:     40px;
+    width:          193px;
+    height:         49px;
+    margin-left:    auto;
+    margin-right:   auto;
+    a{
+      img{
+      }
     }
   }
 }
@@ -73,6 +79,7 @@ body{
           padding:      16px;
           background:   #CCC;
           font-size:    14px;
+          line-height:  14px;
           border:       1px solid #ccc;
         }
 
@@ -144,14 +151,6 @@ body{
           display:            block;
           text-decoration:    none;
 
-          span{
-            color:              #0099E8;
-            font-size:          14px;
-          }
-
-          i{
-            margin:         0 0 0 8px;
-          }
         }
       }
     }
@@ -163,10 +162,12 @@ body{
       border-top:   1px solid #f5f5f5;
 
       &-inner{
-        max-width:      300px;
+        max-width:      320px;
         margin:         0 auto;
         .buy__user-info--header{
           font-size:        14px;
+          font-weight:      600;
+
         }
         .buy__user-info--text{
           margin:       8px 0 0;
@@ -177,10 +178,19 @@ body{
 
         .buy__user-info--fix{
           text-align:     right;
-          a{
-            color:          #0099E8;
-            font-size:      14px;
+          color:              #0099E8;
+          display:            block;
+          text-decoration:    none;
+
+          span{
+            color:              #0099E8;
+            font-size:          14px;
           }
+
+          i{
+            margin:         0 0 0 8px;
+          }
+
         }
       }
     }
