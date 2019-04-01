@@ -1,8 +1,5 @@
-.header
-  .header-logo
-    = link_to root_path do
-      = image_tag "header/logo.svg", width: "185px" , height: "49px"
-.container
+= render "layouts/header-ura"
+.container-buy
   .buy
     .buy__heading
       購入を確定しますか？
@@ -48,16 +45,4 @@
           %span
             変更する
           %i.fa.fa-angle-right
-.footer
-  %nav.footer__nav
-    %ul.footer_nav--list
-      %li
-        = link_to "プライバシーポリシー",   root_path
-      %li
-        = link_to "メリカリ利用規約",       root_path
-      %li
-        = link_to "特定商取引に関する表記",  root_path
-    = link_to root_path, class: "footer__logo" do
-      = image_tag "footer/logo-gray.svg", class: "footer__logo-image"
-    .footer__c
-      © 2019 Mercari
+= render "layouts/footer-ura"
