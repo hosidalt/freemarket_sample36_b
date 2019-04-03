@@ -1,4 +1,4 @@
-class ItemsController < ApplicationController
+class StatusesController < ApplicationController
 
   def index
   end
@@ -20,5 +20,6 @@ class ItemsController < ApplicationController
 
   def destroy
   end
+
 
 end
