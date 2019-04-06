@@ -17,14 +17,27 @@
     .item-box__main--image
       .main-photo
         .main-photo__lists
+          .main-photo__list.active
+            1
           .main-photo__list
+            2
           .main-photo__list
+            3
           .main-photo__list
+            4
+          .main-photo__list
+            5
       .sub-photo
+        .sub-photo__list.active
+          1
         .sub-photo__list
+          2
         .sub-photo__list
+          3
         .sub-photo__list
+          4
         .sub-photo__list
+          5
     %table.item-box__main--table
       %tbody
         %tr
@@ -101,8 +114,10 @@
     .item-box__item-button--left
       = link_to root_path , class: "item-box__item-button--left_like" do
         %i.fa.fa-heart
-        %span
+        %span.item-like
           いいね!
+        %span.like-count
+          3
       = link_to root_path , class: "item-box__item-button--left_report" do
         %i.fa.fa-flag
         %span
@@ -130,7 +145,7 @@
               %i.fa.fa-history
               %span.time
                 3日前
-            .message-body__icon-right
+            = link_to root_path, class: "message-body__icon-right" do
               %i.fa.fa-flag
           .message-body_balloon
       %li.item-message__content--list.clearfix
@@ -148,7 +163,7 @@
               %i.fa.fa-history
               %span.time
                 3日前
-            .message-body__icon-right
+            = link_to root_path, class: "message-body__icon-right" do
               %i.fa.fa-flag
           .message-body_balloon
       %li.item-message__content--list.clearfix
@@ -166,7 +181,7 @@
               %i.fa.fa-history
               %span.time
                 3日前
-            .message-body__icon-right
+            = link_to root_path, class: "message-body__icon-right" do
               %i.fa.fa-flag
           .message-body_balloon
       %li.item-message__content--list.clearfix
@@ -184,7 +199,7 @@
               %i.fa.fa-history
               %span.time
                 3日前
-            .message-body__icon-right
+            = link_to root_path, class: "message-body__icon-right" do
               %i.fa.fa-flag
           .message-body_balloon
   .item-message__content
