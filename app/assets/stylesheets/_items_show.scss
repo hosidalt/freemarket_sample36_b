@@ -48,15 +48,16 @@
     margin:             16px 0 0;
     display:            flex;
     justify-content:    space-between;
+    overflow:           hidden;
 
     &--image{
       width:        300px;
-      height:       375px;
+      min-height:   375px;
+      background:   whitesmoke;
 
       .main-photo{
         width:      300px;
         .main-photo__lists{
-          width:      1500px;
           position:   relative;
           .main-photo__list{
             width:          300px;
@@ -72,14 +73,14 @@
       }
 
       .sub-photo{
-        width:      300px;
-        height:     75px;
-        display:    flex;
+        width:        300px;
+        min-height:   75px;
+        max-height:   120px;
+        display:      flex;
+        flex-wrap:    wrap;
         &__list{
-          width:          75px;
-          height:         75px;
+          min-height:     60px;
           background:     lightblue;
-          border:         1px solid gray;
           opacity:        0.5;
         }
         &__list.active{
@@ -94,7 +95,8 @@
     }
     &--table{
       max-width:        300px;
-      height:           375px;
+      min-height:       375px;
+      height:           100%;
       font-size:        14px;
       width:            100%;
       border:           1px solid #f5f5f5;
@@ -129,42 +131,42 @@
               .good-icon{
                 display:    flex;
                 margin:     8px 0 0 0;
-                i{
-                  color:          red;
+                img{
+                  color:           blue;
                   line-height:    1;
                   height:         16px;
                   width:          16px;
                 }
                 .good-icon__count{
-
+                  margin-left:    2px;
                 }
               }
 
               .normal-icon{
                 display:    flex;
                 margin:     8px 0 0 16px;
-                i{
+                img{
                   color:          red;
                   line-height:    1;
                   height:         16px;
                   width:          16px;
                 }
                 .normal-icon__count{
-
+                  margin-left:    2px;
                 }
               }
 
               .bad-icon{
                 display:    flex;
                 margin:     8px 0 0 16px;
-                i{
+                img{
                   color:          red;
                   line-height:    1;
                   height:         16px;
                   width:          16px;
                 }
                 .bad-icon__count{
-
+                  margin-left:    2px;
                 }
               }
 

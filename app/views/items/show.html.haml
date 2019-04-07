@@ -27,6 +27,8 @@
             4
           .main-photo__list
             5
+          .main-photo__list
+            6
       .sub-photo
         .sub-photo__list.active
           1
@@ -38,6 +40,8 @@
           4
         .sub-photo__list
           5
+        .sub-photo__list
+          6
     %table.item-box__main--table
       %tbody
         %tr
@@ -47,15 +51,15 @@
             = link_to "出品者名前", root_path , class: "item-box__main--table-user_name"
             .item-box__main--table-icon
               .good-icon
-                %i.fa.fa-laugh
+                = image_tag "faceicon/laugh-solid.svg"
                 .good-icon__count
                   10
               .normal-icon
-                %i.fa.fa-meh
+                = image_tag "faceicon/meh-solid.svg"
                 .normal-icon__count
                   5
               .bad-icon
-                %i.fa.fa-frown-open
+                = image_tag "faceicon/frown-solid.svg"
                 .bad-icon__count
                   7
         %tr
