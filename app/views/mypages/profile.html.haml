@@ -1,0 +1,20 @@
+!!!
+%html{lang: "ja"}
+  %head
+    %meta{charset: "utf-8"}
+  %body
+
+    %main.l-container.clearfix
+      .user-profile
+        %section.user-profile__container
+          %h2.user-profile__container__head
+          %
+
+
+
+
+    .chat__footer__form-body
+      =form_for [@group, @message] do |f|
+        =f.text_field :content,class: "chat__footer__form-body__form-message", placeholder: "type a message"
+        =f.label :image, class: "chat__footer__form-body__file" do
+          =f.file_field :image, class: "chat__footer__form-body__file__image"
