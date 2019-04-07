@@ -125,7 +125,7 @@ ul {
         transition:ease 0.2s opacity;
       }
     }
-    .tab-content {
+    &__tab-content {
       display: block;
       .tab_panel {
         display: none;
@@ -164,7 +164,7 @@ ul {
     float: left;
     width: 280px;
     margin: 0 40px 0 0;
-    .mypage-nav__head {
+    .side-nav__head {
       margin: 40px 0 0;
       font-size: 16px;
       font-weight: 600;
@@ -174,7 +174,7 @@ ul {
     }
     li {
       border-top: 1px solid #eee;
-      .mypage-nav__list-item:hover{
+      .side-nav__list-item:hover{
         background: rgba(255,255,255,0.5);
         .fa-chevron-right {
           color:black;
@@ -188,7 +188,7 @@ ul {
           color: black;
         }
       }
-      .mypage-nav__list-item {
+      .side-nav__list-item {
         position: relative;
         display: block;
         min-height: 24px;
