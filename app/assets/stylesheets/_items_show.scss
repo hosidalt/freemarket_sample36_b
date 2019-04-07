@@ -16,6 +16,7 @@
       a{
         text-decoration:      none;
         color:                #333333;
+        display:              inline;
 
       }
 
@@ -32,7 +33,7 @@
 }
 
 .item-box{
-  width:        620px;
+  width:        700px;
   margin:       40px auto 0;
   padding:      24px 40px 40px;
   background:   #fff;
@@ -338,7 +339,7 @@
         .message-body{
           float:            right;
           margin:           5px 0 0;
-          width:            calc(600px - 32px);
+          width:            600px;
           padding:          16px;
           background:       #eef0f4;
           word-break:       break-all;
@@ -382,7 +383,7 @@
       textarea{
         margin:           8px 0 0;
         display:          block;
-        width:            calc(100% - 22px);
+        width:            100%;
         max-width:        100%;
         min-height:       104px;
         padding:          10px;
@@ -531,7 +532,7 @@
         background:   #FFFFFF;
         color:        #333333;
         padding:      16px;
-        height:       calc(110px - 32px);
+        height:       110px;
         &_header{
           font-size:    16px;
           overflow:     hidden;
