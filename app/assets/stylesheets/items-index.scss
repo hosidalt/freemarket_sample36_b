@@ -405,7 +405,7 @@ main {
     margin: 0 auto;
     .slider {
       &__background {
-        background-image: url('slide-image/slide-image-background.jpg');
+        background-image: image-url('slide-image/slide-image-background.jpg');
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -580,7 +580,7 @@ footer {
   background-color: #212121;
   padding-bottom: 60px;
   .app-download {
-    background-image: url("footer/app-download-background.jpg");
+    background-image: image-url("footer/app-download-background.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
