@@ -160,11 +160,11 @@ ul {
     }
   }
 
-  .l-side {
+  .side-bar {
     float: left;
     width: 280px;
     margin: 0 40px 0 0;
-    .side-nav__head {
+    &__nav__head {
       margin: 40px 0 0;
       font-size: 16px;
       font-weight: 600;
@@ -174,7 +174,7 @@ ul {
     }
     li {
       border-top: 1px solid #eee;
-      .side-nav__list-item:hover{
+      .side-bar__nav__list__item:hover{
         background: rgba(255,255,255,0.5);
         .fa-chevron-right {
           color:black;
@@ -188,7 +188,7 @@ ul {
           color: black;
         }
       }
-      .side-nav__list-item {
+      .side-bar__nav__list__item {
         position: relative;
         display: block;
         min-height: 24px;
