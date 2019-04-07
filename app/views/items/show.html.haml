@@ -4,7 +4,7 @@
       = link_to root_path do
         %span
           メルカリ
-      %i.fa.fa-angle-right
+      = fa_icon("angle-right")
     %li
       %span.title
         ○○○○○○○○
@@ -117,17 +117,17 @@
   .item-box__item-button
     .item-box__item-button--left
       = link_to root_path , class: "item-box__item-button--left_like" do
-        %i.fa.fa-heart
+        = fa_icon("heart")
         %span.item-like
           いいね!
         %span.like-count
           3
       = link_to root_path , class: "item-box__item-button--left_report" do
-        %i.fa.fa-flag
+        = fa_icon("flag")
         %span
           不適切な商品の報告
     = link_to root_path , class: "item-box__item-button--right" do
-      %i.fa.fa-lock
+      = fa_icon("lock")
       %span
         あんしん・あんぜんへの取り組み
 
@@ -138,7 +138,7 @@
         =link_to root_path, class: "message-user" do
           %figure
             .image
-              %img
+              = image_tag "country/flag_jp.png"
             %figcaption
               ユーザー名
         .message-body
@@ -146,17 +146,17 @@
             このコメントはテストコメントですこのコメントはテストコメントですこのコメントはテストコメントですこのコメントはテストコメントですこのコメントはテストコメントですこのコメントはテストコメントですこのコメントはテストコメントです
           .message-body__icon
             .message-body__icon-left
-              %i.fa.fa-history
+              = fa_icon("history")
               %span.time
                 3日前
             = link_to root_path, class: "message-body__icon-right" do
-              %i.fa.fa-flag
+              = fa_icon("flag")
           .message-body_balloon
       %li.item-message__content--list.clearfix
         =link_to root_path, class: "message-user" do
           %figure
             .image
-              %img
+              = image_tag "country/flag_jp.png"
             %figcaption
               ユーザー名
         .message-body
@@ -164,17 +164,17 @@
             このコメントはテストコメントですこのコメントはテストコメントですこのコメントはテストコメントですこのコメントはテストコメントですこのコメントはテストコメントですこのコメントはテストコメントですこのコメントはテストコメントですこのコメントはテストコメントですこのコメントはテストコメントですこのコメントはテストコメントです
           .message-body__icon
             .message-body__icon-left
-              %i.fa.fa-history
+              = fa_icon("history")
               %span.time
                 3日前
             = link_to root_path, class: "message-body__icon-right" do
-              %i.fa.fa-flag
+              = fa_icon("flag")
           .message-body_balloon
       %li.item-message__content--list.clearfix
         =link_to root_path, class: "message-user" do
           %figure
             .image
-              %img
+              = image_tag "country/flag_jp.png"
             %figcaption
               ユーザー名
         .message-body
@@ -182,17 +182,17 @@
             このコメントは
           .message-body__icon
             .message-body__icon-left
-              %i.fa.fa-history
+              = fa_icon("history")
               %span.time
                 3日前
             = link_to root_path, class: "message-body__icon-right" do
-              %i.fa.fa-flag
+              = fa_icon("flag")
           .message-body_balloon
       %li.item-message__content--list.clearfix
         =link_to root_path, class: "message-user" do
           %figure
             .image
-              %img
+              = image_tag "country/flag_jp.png"
             %figcaption
               ユーザー名
         .message-body
@@ -200,11 +200,11 @@
             このコメントはテストコメントですこのコメントはテストコメントですこのコメントはテストコメントですこのコメントはテストコメントですこのコメントはテストコメントですこのコメントはテストコメントですこのコメントはテストコメントですこのコメントはテストコメントですこのコメントはテストコメントですこのコメントはテストコメントです
           .message-body__icon
             .message-body__icon-left
-              %i.fa.fa-history
+              = fa_icon("history")
               %span.time
                 3日前
             = link_to root_path, class: "message-body__icon-right" do
-              %i.fa.fa-flag
+              = fa_icon("flag")
           .message-body_balloon
   .item-message__content
     %form.message-form
@@ -215,22 +215,22 @@
         コメントする
 %nav.item-link
   = link_to root_path, class: "item-link__prev" do
-    %i.fa.fa-angle-left
+    = fa_icon("angle-left")
     .item-link__prev-item
       〇〇〇〇の商品
   = link_to root_path, class: "item-link__next" do
     .item-link__next-item
       〇〇〇〇の商品
-    %i.fa.fa-angle-right
+    = fa_icon("angle-right")
 .item-social-media-box
   .item-social-media-box__text
   .item-social-media-box__list
     = link_to root_path, class: "item-social-media-box__list-facebook" do
-      %i.fa.fa-facebook-square
+      = fa_icon("facebook-square")
     = link_to root_path, class: "item-social-media-box__list-twitter" do
-      %i.fa.fa-twitter-square
+      = fa_icon("twitter-square")
     = link_to root_path, class: "item-social-media-box__list-pinterest" do
-      %i.fa.fa-pinterest-square
+      = fa_icon("pinterest-square")
 .items-in-user-profile
   .items-in-user-profile__body
     .items-in-user-profile__body-header
@@ -245,7 +245,7 @@
             .items-in-user-profile__body-box--text_info-price
               ¥ 2,222-
             .items-in-user-profile__body-box--text_info-icon
-              %i.fa.fa-heart.items-in-user-profile__body-box--text_info-icon-heart
+              = fa_icon("heart", class: "items-in-user-profile__body-box--text_info-icon-heart")
               %span.items-in-user-profile__body-box--text_info-icon-conut
                 3
           .items-in-user-profile__body-box--text_tax
@@ -259,7 +259,7 @@
             .items-in-user-profile__body-box--text_info-price
               ¥ 2,222-
             .items-in-user-profile__body-box--text_info-icon
-              %i.fa.fa-heart.items-in-user-profile__body-box--text_info-icon-heart
+              = fa_icon("heart", class: "items-in-user-profile__body-box--text_info-icon-heart")
               %span.items-in-user-profile__body-box--text_info-icon-conut
                 3
           .items-in-user-profile__body-box--text_tax
@@ -273,7 +273,7 @@
             .items-in-user-profile__body-box--text_info-price
               ¥ 2,222-
             .items-in-user-profile__body-box--text_info-icon
-              %i.fa.fa-heart.items-in-user-profile__body-box--text_info-icon-heart
+              = fa_icon("heart", class: "items-in-user-profile__body-box--text_info-icon-heart")
               %span.items-in-user-profile__body-box--text_info-icon-conut
                 3
           .items-in-user-profile__body-box--text_tax
@@ -287,7 +287,7 @@
             .items-in-user-profile__body-box--text_info-price
               ¥ 2,222-
             .items-in-user-profile__body-box--text_info-icon
-              %i.fa.fa-heart.items-in-user-profile__body-box--text_info-icon-heart
+              = fa_icon("heart", class: "items-in-user-profile__body-box--text_info-icon-heart")
               %span.items-in-user-profile__body-box--text_info-icon-conut
                 3
           .items-in-user-profile__body-box--text_tax
@@ -301,7 +301,7 @@
             .items-in-user-profile__body-box--text_info-price
               ¥ 2,222-
             .items-in-user-profile__body-box--text_info-icon
-              %i.fa.fa-heart.items-in-user-profile__body-box--text_info-icon-heart
+              = fa_icon("heart", class: "items-in-user-profile__body-box--text_info-icon-heart")
               %span.items-in-user-profile__body-box--text_info-icon-conut
                 3
           .items-in-user-profile__body-box--text_tax
@@ -315,7 +315,7 @@
             .items-in-user-profile__body-box--text_info-price
               ¥ 2,222-
             .items-in-user-profile__body-box--text_info-icon
-              %i.fa.fa-heart.items-in-user-profile__body-box--text_info-icon-heart
+              = fa_icon("heart", class: "items-in-user-profile__body-box--text_info-icon-heart")
               %span.items-in-user-profile__body-box--text_info-icon-conut
                 3
           .items-in-user-profile__body-box--text_tax
