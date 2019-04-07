@@ -2,7 +2,6 @@
 lock "~> 3.11.0"
 
 set :application, 'freemarket_sample36_b'
-set :bundle_binstubs, -> { shared_path.join('bin') }
 set :repo_url,  'git@github.com:uenodabal/freemarket_sample36_b.git'
 
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
