@@ -6,7 +6,9 @@ $(function(){
     $(this).addClass("active");
     $(".notifi-todo_panel").eq($th).addClass("active")
   });
+});
 
+$(function(){
   $(".purchase").on("click", function(){
     var $th = $(this).index();
     $(".purchase").removeClass("active");
@@ -14,7 +16,9 @@ $(function(){
     $(this).addClass("active");
     $(".purchase_panel").eq($th).addClass("active")
   });
+});
 
+$(function(){
   $(".mypage-nav__list-item").on("click", function(){
     var index = $(".mypage-nav__list-item").index(this);
     $(".mypage-nav__list-item").removeClass("active");
