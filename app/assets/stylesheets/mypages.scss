@@ -169,12 +169,12 @@ ul {
       font-size: 16px;
       font-weight: 600;
     }
-    &__nav__list-content:first-child {
+    li:first-child {
       border: 0;
     }
-    &__nav__list-content {
+    li {
       border-top: 1px solid #eee;
-      &__item:hover{
+      .side-bar__nav__list__item:hover{
         background: rgba(255,255,255,0.5);
         .fa-chevron-right {
           color:black;
@@ -188,7 +188,7 @@ ul {
           color: black;
         }
       }
-      &__item {
+      .side-bar__nav__list__item {
         position: relative;
         display: block;
         min-height: 24px;
