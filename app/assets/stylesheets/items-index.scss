@@ -235,7 +235,7 @@ header {
           background-color: white;
           .user-header {
             height: 75px;
-            background-image: image-url("header/user-bg.jpg");
+            background-image: image-url("user-bg.jpg");
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
@@ -369,7 +369,7 @@ header {
         }
         .to-do {
           background-color: white;
-          background-image: image-url("images/header/logo-gray-icon.svg");
+          background-image: image-url("header/logo-gray-icon.svg");
           background-repeat: no-repeat;
           background-size: 25%;
           background-position: 50% 20%;
@@ -580,7 +580,7 @@ footer {
   background-color: #212121;
   padding-bottom: 60px;
   .app-download {
-    background-image: image-url("images/footer/app-download-background.jpg");
+    background-image: image-url("assets/images/footer/app-download-background.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
