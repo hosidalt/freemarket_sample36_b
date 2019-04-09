@@ -1,20 +1,15 @@
-!!!
-%html{lang: "ja"}
-  %head
-    %meta{charset: "utf-8"}
-  %body
+%main.l-container.clearfix
+  .profile
+    %section.profile__container
+      %h2.profile__container__head
+        プロフィール
+      =form_for @user, url:mypage_profile_create_path, class: 'profile__container__setting' do |f|
+        .profile__container__setting__name
+          %figure
+            = image_tag "header/member_photo_noimage_thumb.png", alt:"", width: "60", height:"60"
+          =f.text_field :nickname, value: user.id, name: nickname, placeholder: "例)TECH::EXPERT", class: 'profile__container__setting__name__nickname'
+        .profile__container__setting__content
+          =f.text_area :profil_comment, class: 'profile__container__setting__content__introduction', placeholder: "例)"
+          =f.submit class: 'profile__container__setting__btn btn--red'
+            変更する
 
-    %main.l-container.clearfix
-      .user-profile
-        %section.user-profile__container
-          %h2.user-profile__container__head
-          %
-
-
-
-
-    .chat__footer__form-body
-      =form_for [@group, @message] do |f|
-        =f.text_field :content,class: "chat__footer__form-body__form-message", placeholder: "type a message"
-        =f.label :image, class: "chat__footer__form-body__file" do
-          =f.file_field :image, class: "chat__footer__form-body__file__image"
