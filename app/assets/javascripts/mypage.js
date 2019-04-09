@@ -6,9 +6,6 @@ $(function(){
     $(this).addClass("active");
     $(".notifi-todo_panel").eq($th).addClass("active")
   });
-});
-
-$(function(){
   $(".purchase").on("click", function(){
     var $th = $(this).index();
     $(".purchase").removeClass("active");
