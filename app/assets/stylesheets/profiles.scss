@@ -68,14 +68,15 @@ clear: both;
           font-size: 16px;
           line-height: 1.5;
         }
-        &__btn.btn--red {
-          display: block;
+        &__btn {
           width: 100%;
           line-height: 48px;
           font-size: 14px;
-           transition: all ease-out .3s;
-           cursor: pointer;
-           text-align: center;
+          transition: all ease-out .3s;
+          cursor: pointer;
+          text-align: center;
+        }
+        .btn--red {
           margin: 16px 0 0;
           background: #ea352d;
           border: 1px solid #ea352d;
