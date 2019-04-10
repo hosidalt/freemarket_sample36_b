@@ -1,0 +1,57 @@
+%main.l-container.clearfix
+  .mypage
+
+    %section.mypage__user-icon
+      =link_to mypages_path do
+        %figure
+          = image_tag "header/member_photo_noimage_thumb.png", alt:"", width: "60", height:"60"
+
+        %h2.bold yoshida
+        .mypage__user-icon__number
+          %div
+            評価
+            %span.bold 0
+          %div
+            出品数
+            %span.bold 0
+
+    %section.mypage__notification-todo
+      %ul.mypage__tabs
+        %li.mypage_tab.notification-todo.active
+          %h3
+            .mypage__tabs--font
+              お知らせ
+        %li.mypage_tab.notification-todo
+          %h3
+            .mypage__tabs--font
+              やることリスト
+      .mypage__tab-content
+        %ul#mypage-tab-notification.mypage-time.tab_panel.notifi-todo_panel.active
+          %li.mypage-item-not-found.bold
+            現在、お知らせはありません
+        %ul#mypage-tab-todo.mypage-time.tab_panel.notifi-todo_panel
+          %li.mypage-item-not-found.bold
+            現在、やることリストはありません
+
+    %section.mypage__purchase
+      %h2.mypage__purchase__head.bold
+        購入した商品
+      %ul.mypage__tabs
+        %li.mypage_tab.purchase.active
+          %h3
+            .mypage__tabs--font
+              取引中
+        %li.mypage_tab.purchase{data: {tab: 'purchase'}}
+          %h3
+            .mypage__tabs--font
+              過去の取引
+      .mypage__tab-content
+        %ul#mypage-tab-taranceaction-now.mypage-item-list.tab_panel.purchase_panel.active
+          %li.mypage-item-not-found.bold
+            取引中の商品がありません。
+        %ul#mypage-tab-taranceaction-old.mypage-item-list.tab_panel.purchase_panel
+          %li.mypage-item-not-found.bold
+            取引中の商品がありません。
+
+
+  = render partial: 'mypages/side-bar'
