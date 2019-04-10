@@ -1,0 +1,18 @@
+%section.card-box
+  %h2.card-box__header
+    支払い方法
+  .card-box__create
+    %section.card-box__create-sub
+      .card-box__create-sub--header
+        クレジットカード一覧
+    %section.card-box__create-button
+      = link_to root_path, class: "card-box__create-button--add" do
+        .card-box__create-button--add-icon
+          = fa_icon("credit-card")
+        .card-box__create-button--add-list
+          クレジットカードを追加する
+    = link_to root_path, class: "card-box__create-change" do
+      .card-box__create-change--link
+        支払い方法について
+      .card-box__create-change--icon
+        = fa_icon("angle-right")
