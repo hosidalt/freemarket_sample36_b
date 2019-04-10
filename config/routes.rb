@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
   root 'items#index'
   resources :mypages, only: [:index]
-
+  resources :profiles, only: [:index]
 end
