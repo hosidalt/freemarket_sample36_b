@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   resources :mypages, only: [:index, :edit, :update] do
     resources :cards
   end
-    resources :users
+  resources :users
   resources :statuses
 end
