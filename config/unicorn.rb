@@ -38,7 +38,7 @@ before_fork do |server, worker|
 end
 
 before_exec do |server|
-  ENV["BUNDLE_GEMFILE"] = File.join(File.expand_path("../../../", __FILE__), "current", "Gemfile")
+  ENV["BUNDLE_GEMFILE"] = "/var/www/freemarket_sample36_b/current/Gemfile"
 end
 
 after_fork do |_server, _worker|
