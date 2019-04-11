@@ -235,7 +235,7 @@ header {
           background-color: white;
           .user-header {
             height: 75px;
-            background-image: image-url("user-bg.jpg");
+            background-image: image-url("header/user-bg.jpg");
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
@@ -405,7 +405,7 @@ main {
     margin: 0 auto;
     .slider {
       &__background {
-        background-image: image-url("images/slide-image-background.jpg");
+        background-image: image-url("slide-image/slide-image-background.jpg");
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -580,7 +580,7 @@ footer {
   background-color: #212121;
   padding-bottom: 60px;
   .app-download {
-    background-image: image-url("assets/images/footer/app-download-background.jpg");
+    background-image: image-url("footer/app-download-background.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
