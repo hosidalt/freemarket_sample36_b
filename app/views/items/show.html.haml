@@ -1,0 +1,324 @@
+= render "shared/header"
+%nav.bread-crumbs
+  %ul
+    %li
+      = link_to root_path do
+        %span
+          メルカリ
+      = fa_icon("angle-right")
+    %li
+      %span.title
+        ○○○○○○○○
+
+
+%section.item-box
+  %h1.item-box__header
+    商品タイトル
+  .item-box__main
+    .item-box__main--image
+      .main-photo
+        .main-photo__lists
+          .main-photo__list.active
+            1
+          .main-photo__list
+            2
+          .main-photo__list
+            3
+          .main-photo__list
+            4
+          .main-photo__list
+            5
+          .main-photo__list
+            6
+      .sub-photo
+        .sub-photo__list.active
+          1
+        .sub-photo__list
+          2
+        .sub-photo__list
+          3
+        .sub-photo__list
+          4
+        .sub-photo__list
+          5
+        .sub-photo__list
+          6
+    %table.item-box__main--table
+      %tbody
+        %tr
+          %th
+            出品者
+          %td
+            = link_to "出品者名前", root_path , class: "item-box__main--table-user_name"
+            .item-box__main--table-icon
+              .good-icon
+                = image_tag "faceicon/laugh-solid.svg"
+                .good-icon__count
+                  10
+              .normal-icon
+                = image_tag "faceicon/meh-solid.svg"
+                .normal-icon__count
+                  5
+              .bad-icon
+                = image_tag "faceicon/frown-solid.svg"
+                .bad-icon__count
+                  7
+        %tr
+          %th
+            カテゴリー
+          %td
+            アイコン
+        %tr
+          %th
+            ブランド
+          %td
+            シャネル
+        %tr
+          %th
+            商品のサイズ
+          %td
+            Mサイズ
+        %tr
+          %th
+            商品の状態
+          %td
+            とても良い
+        %tr
+          %th
+            配送料の負担
+          %td
+            出品者負担
+        %tr
+          %th
+            配送の方法
+          %td
+            ヤマト運輸
+        %tr
+          %th
+            配送元地域
+          %td
+            大阪府
+        %tr
+          %th
+            発送日の目安
+          %td
+            1~2日程度
+  .item-box__price
+    %span.item-box__price--item_price
+      ¥ 2,200
+    %span.item-box__price--item_tax
+      (税込)
+    %span.item-box__price--item_shipping_fee
+      送料込み
+  = link_to "購入画面に進む",root_path, class: "item-box__buy-btn"
+  .item-box__item-description
+    %p.item-box__item-description-inner
+      この商品は〇〇です。〇〇の特徴があります。〇〇で製造され、〇〇で購入しました。見た目は〇〇ですが、〇〇です。
+
+  .item-box__item-button
+    .item-box__item-button--left
+      = link_to root_path , class: "item-box__item-button--left_like" do
+        = fa_icon("heart")
+        %span.item-like
+          いいね!
+        %span.like-count
+          3
+      = link_to root_path , class: "item-box__item-button--left_report" do
+        = fa_icon("flag")
+        %span
+          不適切な商品の報告
+    = link_to root_path , class: "item-box__item-button--right" do
+      = fa_icon("lock")
+      %span
+        あんしん・あんぜんへの取り組み
+
+.item-message
+  .item-message__content
+    %ul.item-message__content--lists
+      %li.item-message__content--list.clearfix
+        =link_to root_path, class: "message-user" do
+          %figure
+            .image
+              = image_tag "country/flag_jp.png"
+            %figcaption
+              ユーザー名
+        .message-body
+          .message-body__text
+            このコメントはテストコメントですこのコメントはテストコメントですこのコメントはテストコメントですこのコメントはテストコメントですこのコメントはテストコメントですこのコメントはテストコメントですこのコメントはテストコメントです
+          .message-body__icon
+            .message-body__icon-left
+              = fa_icon("history")
+              %span.time
+                3日前
+            = link_to root_path, class: "message-body__icon-right" do
+              = fa_icon("flag")
+          .message-body_balloon
+      %li.item-message__content--list.clearfix
+        =link_to root_path, class: "message-user" do
+          %figure
+            .image
+              = image_tag "country/flag_jp.png"
+            %figcaption
+              ユーザー名
+        .message-body
+          .message-body__text
+            このコメントはテストコメントですこのコメントはテストコメントですこのコメントはテストコメントですこのコメントはテストコメントですこのコメントはテストコメントですこのコメントはテストコメントですこのコメントはテストコメントですこのコメントはテストコメントですこのコメントはテストコメントですこのコメントはテストコメントです
+          .message-body__icon
+            .message-body__icon-left
+              = fa_icon("history")
+              %span.time
+                3日前
+            = link_to root_path, class: "message-body__icon-right" do
+              = fa_icon("flag")
+          .message-body_balloon
+      %li.item-message__content--list.clearfix
+        =link_to root_path, class: "message-user" do
+          %figure
+            .image
+              = image_tag "country/flag_jp.png"
+            %figcaption
+              ユーザー名
+        .message-body
+          .message-body__text
+            このコメントは
+          .message-body__icon
+            .message-body__icon-left
+              = fa_icon("history")
+              %span.time
+                3日前
+            = link_to root_path, class: "message-body__icon-right" do
+              = fa_icon("flag")
+          .message-body_balloon
+      %li.item-message__content--list.clearfix
+        =link_to root_path, class: "message-user" do
+          %figure
+            .image
+              = image_tag "country/flag_jp.png"
+            %figcaption
+              ユーザー名
+        .message-body
+          .message-body__text
+            このコメントはテストコメントですこのコメントはテストコメントですこのコメントはテストコメントですこのコメントはテストコメントですこのコメントはテストコメントですこのコメントはテストコメントですこのコメントはテストコメントですこのコメントはテストコメントですこのコメントはテストコメントですこのコメントはテストコメントです
+          .message-body__icon
+            .message-body__icon-left
+              = fa_icon("history")
+              %span.time
+                3日前
+            = link_to root_path, class: "message-body__icon-right" do
+              = fa_icon("flag")
+          .message-body_balloon
+  .item-message__content
+    %form.message-form
+      %p.message-form__nav
+        相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      %textarea.message-form__text
+      %button.message-form__submit
+        コメントする
+%nav.item-link
+  = link_to root_path, class: "item-link__prev" do
+    = fa_icon("angle-left")
+    .item-link__prev-item
+      〇〇〇〇の商品
+  = link_to root_path, class: "item-link__next" do
+    .item-link__next-item
+      〇〇〇〇の商品
+    = fa_icon("angle-right")
+.item-social-media-box
+  .item-social-media-box__text
+  .item-social-media-box__list
+    = link_to root_path, class: "item-social-media-box__list-facebook" do
+      = fa_icon("facebook-square")
+    = link_to root_path, class: "item-social-media-box__list-twitter" do
+      = fa_icon("twitter-square")
+    = link_to root_path, class: "item-social-media-box__list-pinterest" do
+      = fa_icon("pinterest-square")
+.items-in-user-profile
+  .items-in-user-profile__body
+    .items-in-user-profile__body-header
+      〇〇さんのその他の出品
+    .items-in-user-profile__body-boxs
+      = link_to root_path, class: "items-in-user-profile__body-box" do
+        .items-in-user-profile__body-box--image
+        .items-in-user-profile__body-box--text
+          .items-in-user-profile__body-box--text_header
+            商品名称はこちらです商品名称はこちらです
+          .items-in-user-profile__body-box--text_info
+            .items-in-user-profile__body-box--text_info-price
+              ¥ 2,222-
+            .items-in-user-profile__body-box--text_info-icon
+              = fa_icon("heart", class: "items-in-user-profile__body-box--text_info-icon-heart")
+              %span.items-in-user-profile__body-box--text_info-icon-conut
+                3
+          .items-in-user-profile__body-box--text_tax
+            (税込)
+      = link_to root_path, class: "items-in-user-profile__body-box" do
+        .items-in-user-profile__body-box--image
+        .items-in-user-profile__body-box--text
+          .items-in-user-profile__body-box--text_header
+            商品名称はこちらです
+          .items-in-user-profile__body-box--text_info
+            .items-in-user-profile__body-box--text_info-price
+              ¥ 2,222-
+            .items-in-user-profile__body-box--text_info-icon
+              = fa_icon("heart", class: "items-in-user-profile__body-box--text_info-icon-heart")
+              %span.items-in-user-profile__body-box--text_info-icon-conut
+                3
+          .items-in-user-profile__body-box--text_tax
+            (税込)
+      = link_to root_path, class: "items-in-user-profile__body-box" do
+        .items-in-user-profile__body-box--image
+        .items-in-user-profile__body-box--text
+          .items-in-user-profile__body-box--text_header
+            商品名称はこちらです
+          .items-in-user-profile__body-box--text_info
+            .items-in-user-profile__body-box--text_info-price
+              ¥ 2,222-
+            .items-in-user-profile__body-box--text_info-icon
+              = fa_icon("heart", class: "items-in-user-profile__body-box--text_info-icon-heart")
+              %span.items-in-user-profile__body-box--text_info-icon-conut
+                3
+          .items-in-user-profile__body-box--text_tax
+            (税込)
+      = link_to root_path, class: "items-in-user-profile__body-box" do
+        .items-in-user-profile__body-box--image
+        .items-in-user-profile__body-box--text
+          .items-in-user-profile__body-box--text_header
+            商品名称はこちらです
+          .items-in-user-profile__body-box--text_info
+            .items-in-user-profile__body-box--text_info-price
+              ¥ 2,222-
+            .items-in-user-profile__body-box--text_info-icon
+              = fa_icon("heart", class: "items-in-user-profile__body-box--text_info-icon-heart")
+              %span.items-in-user-profile__body-box--text_info-icon-conut
+                3
+          .items-in-user-profile__body-box--text_tax
+            (税込)
+      = link_to root_path, class: "items-in-user-profile__body-box" do
+        .items-in-user-profile__body-box--image
+        .items-in-user-profile__body-box--text
+          .items-in-user-profile__body-box--text_header
+            商品名称はこちらです
+          .items-in-user-profile__body-box--text_info
+            .items-in-user-profile__body-box--text_info-price
+              ¥ 2,222-
+            .items-in-user-profile__body-box--text_info-icon
+              = fa_icon("heart", class: "items-in-user-profile__body-box--text_info-icon-heart")
+              %span.items-in-user-profile__body-box--text_info-icon-conut
+                3
+          .items-in-user-profile__body-box--text_tax
+            (税込)
+      = link_to root_path, class: "items-in-user-profile__body-box" do
+        .items-in-user-profile__body-box--image
+        .items-in-user-profile__body-box--text
+          .items-in-user-profile__body-box--text_header
+            商品名称はこちらです
+          .items-in-user-profile__body-box--text_info
+            .items-in-user-profile__body-box--text_info-price
+              ¥ 2,222-
+            .items-in-user-profile__body-box--text_info-icon
+              = fa_icon("heart", class: "items-in-user-profile__body-box--text_info-icon-heart")
+              %span.items-in-user-profile__body-box--text_info-icon-conut
+                3
+          .items-in-user-profile__body-box--text_tax
+            (税込)
+= render "shared/footer"
