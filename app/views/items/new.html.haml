@@ -1,0 +1,124 @@
+= render "layouts/sub-header"
+.post-container
+  %h2 商品の情報を入力
+  %form
+    .item-info
+      %h3
+        出品画像
+        %span 必須
+      %p 最大10枚までアップロードできます
+      .clearfix
+        .item-images-container
+          %ul#images-lists
+        %label
+          %input{type: "file", name: "images[]", multiple: true, id: "item-images"}
+          #post-images.have-0-item
+            %h4#erasing-sentence
+              ドラッグアンドドロップ
+              %br
+              またはクリックしてファイルをアップロード
+    .item-info
+      .form-group
+        %h3
+          商品名
+          %span 必須
+        %input{ placeholder: "商品名（必須 40字まで）" }
+      .form-group
+        %h3
+          商品の説明
+          %span 必須
+        %textarea{placeholder: "商品の説明（必須 1000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"}
+    .item-info
+      .clearfix
+        .item-info__left
+          %p 商品の詳細
+        .item-info__right
+          .form-group
+            %h3
+              カテゴリー
+              %span 必須
+            .select-wrap
+              %select
+                %option{value: ""}
+                  ー
+                %option{value: "レディース"}
+                  レディース
+          .form-group
+            %h3
+              商品の状態
+              %span 必須
+            .select-wrap
+              %select
+                %option{value: ""}
+                  ー
+    .item-info
+      .clearfix
+        .item-info__left
+          .clearfix
+            %p 配送について
+            = link_to "?", root_path
+        .item-info__right
+          .form-group
+            %h3
+              配送料の負担
+              %span 必須
+            .select-wrap
+              %select
+                %option{value: ""}
+                  ー
+          .form-group
+            %h3
+              配送元の地域
+              %span 必須
+            .select-wrap
+              %select
+                %option{value: ""}
+                  ー
+          .form-group
+            %h3
+              発送までの日数
+              %span 必須
+            .select-wrap
+              %select
+                %option{value: ""}
+                  ー
+    .item-info
+      .clearfix
+        .item-info__left
+          .clearfix
+            %p 販売価格(300〜9,999,999)
+            = link_to "?", root_path
+        .item-info__right
+          .form-group.price-form
+            .clearfix
+              %h3
+                価格
+                %span 必須
+              %input{placeholder: "例）300"}
+          .commission
+            .clearfix
+              %h3 販売手数料(10%)
+              %p#commission-result -
+          .benefit
+            .clearfix
+              %h3 販売利益
+              %p#benefit-result -
+    .item-info.sell-btn-part
+      .disclaimer
+        = link_to "禁止されている出品", root_path
+        、
+        = link_to "行為", root_path
+        を必ずご確認ください。
+        %br
+        またブランド品でシリアルナンバー等がある場合はご記載ください。
+        = link_to "偽ブランドの販売", root_path
+        は犯罪であり処罰される可能性があります。
+        %br
+        また、出品をもちまして
+        = link_to "加盟店規約", root_path
+        に同意したことになります。
+        %br
+      %button{type: "submit", class: "item-submit-btn"}
+        出品する
+      = link_to "もどる", root_path, class: "back-page"
+= render "layouts/sub-footer"
