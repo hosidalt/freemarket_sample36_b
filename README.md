@@ -108,7 +108,7 @@ has_many :brand_brand-group
 |brand-group_id|references|null: false, foreing_key: true|
 
 ### Association
-belogns_to :brand
+belongs_to :brand
 belongs_to :brand_group
 
 

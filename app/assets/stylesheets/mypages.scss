@@ -1,3 +1,162 @@
-// Place all the styles related to the Mypages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+html {
+  height: 100%;
+  overflow-y: auto;
+  box-sizing:border-box;
+  cursor:default;
+  body{
+  min-height:100%;
+  background:#f5f5f5;
+  font-family:'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  font-size:14px;
+  color:#333;
+  line-height:1;
+  }
+}
+
+
+.clearfix:after {
+content: '';
+display: block;
+clear: both;
+}
+h2{
+  margin: 8px 0 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+a {
+  color:#0099e8;
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+.bold {
+  font-weight: 600;
+}
+.l-container {
+  width: 1020px;
+  margin: 40px auto 0;
+  padding: 0 0 40px 0;
+
+
+  .mypage {
+    float:right;
+    width: 700px;
+
+    &__user-icon {
+      position: relative;
+      box-sizing:border-box;
+      height: 200px;
+      padding: 20px;
+      background:url('header/user-bg.jpg');
+      background-repeat:no-repeat;
+      background-size: cover;
+      text-align: center;
+      & >a:hover {
+        text-decoration: underline;
+        opacity: .7;
+      }
+      & >a {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        color:black;
+        transform: translate(0, -50%);
+        figure {
+          overflow: hidden;
+          width:60px;
+          height:60px;
+          margin: 0 auto;
+          border-radius: 50px;
+          img {
+            vertical-align: middle;
+          }
+        }
+        .mypage__user-icon__number {
+          margin: 8px 0 0;
+          font-size:0;
+          div{
+            display:inline-block;
+            font-size: 14px;
+            span{
+              margin: 0 0 0 8px;
+              font-size: 16px;
+            }
+          }
+          div+div {
+            margin: 0 0 0 16px;
+          }
+        }
+      }
+    }
+
+    &__tabs {
+      border: 0;
+      background: #eee;
+      font-size: 0;
+      &--font:hover {
+        color: gray;
+      }
+      &--font {
+        position: relative;
+        display: block;
+        color: #333;
+        font-size: 16px;
+        line-height: 72px;
+        }
+      h3{
+        font-weight: bold;
+      }
+      li.active {
+      background:white;
+        .mypage__tabs--font {
+          border-top: 2px solid #ea352d;
+        }
+      }
+      li {
+        width: 50%;
+        height: 74px;
+        display: inline-block;
+        text-align: center;
+        vertical-align: top;
+        transition:ease 0.2s opacity;
+      }
+    }
+    &__tab-content {
+      display: block;
+      .tab_panel {
+        display: none;
+      }
+      .tab_panel.active{
+        padding: 160px 0 60px;
+        background: url('header/logo-gray-icon.svg');
+        background-repeat: no-repeat;
+        background-position: center 40px;
+        background-size: 78px 85px;
+        text-align: center;
+        font-size: 16px;
+        color: #ccc;
+        display:block;
+      }
+    }
+
+    &__notification-todo {
+      margin: 0;
+      background: white;
+    }
+
+    &__purchase {
+      margin: 40px 0 0;
+      background: #fff;
+      &__head {
+        padding: 0 16px;
+        background: #fafafa;
+        font-size: 16px;
+        line-height: 72px;
+      }
+    }
+  }
+}
