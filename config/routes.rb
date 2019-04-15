@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   root 'items#index'
   resources :mypages, only: [:index]
   resources :profiles, only: [:index]
+  resources :identifications, only: [:index]
 
 end
