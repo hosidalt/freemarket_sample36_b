@@ -7,12 +7,10 @@ Rails.application.routes.draw do
     resources :cards
   end
   resources :profiles, only: [:index]
-<<<<<<< HEAD
   resources :identifications, only: [:index]
-
-=======
   resources :users
   resources :statuses
->>>>>>> ayukua/master
+
+
 end
 
