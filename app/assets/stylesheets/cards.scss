@@ -1,0 +1,55 @@
+.card-box{
+  width: 700px;
+  background:white;
+  float: right;
+  &__header{
+    padding: 8px 24px;
+    text-align: center;
+    font-size: 24px;
+    border-bottom: 1px solid #F5F5F5;
+    line-height: 1.4;
+    font-weight: bold;
+  }
+  &__create{
+    padding: 64px;
+    &-sub{
+      &--header{
+        width: 320px;
+        font-size: 16px;
+        margin: 0 auto;
+      }
+    }
+    &-button{
+      padding: 24px 0;
+      border-bottom: 1px solid #eee;
+      &--add{
+        height: 50px;
+        width: 320px;
+        background: red;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        color: #FFFFFF;
+        line-height: 48px;
+        font-size: 14px;
+        &-icon{
+          display: inline;
+          margin-right: 16px;
+        }
+        &-list{
+          display: inline;
+        }
+      }
+    }
+    &-change{
+      display: flex;
+      justify-content: flex-end;
+      margin: 40px 0 0;
+      color: #0099E8;
+      &--icon{
+        margin-left: 8px;
+        font-weight: bold;
+      }
+    }
+  }
+}
