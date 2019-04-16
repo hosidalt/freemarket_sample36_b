@@ -1,0 +1,7 @@
+%main.l-container.clearfix
+  .logout
+    .logout__container
+      =form_for @user, url:{controller: :logouts, action: :index}, html:{class: 'logout__container__form'} do |f|
+        .logout__container__form__content
+          =f.submit "ログアウト", class: 'btn-default btn-red'
+  = render partial: 'mypages/side-bar'
