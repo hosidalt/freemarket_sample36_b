@@ -1,0 +1,30 @@
+.bread-crumbs{
+  height: 50px;
+  border-top: 1px solid #eee;
+  background: #fff;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  &__ul{
+    width: 1020px;
+    margin: 0 auto;
+    padding: 17px 0 16px;
+    line-height: 16px;
+    color: #333333;
+    font-size: 14px;
+    &-list{
+      display: inline;
+      a{
+        text-decoration: none;
+        color: #333333;
+        display: inline;
+      }
+      i{
+        font-weight: 400;
+        margin: 0 8px;
+      }
+    }
+    &-list:last-child{
+      font-weight: 600;
+    }
+  }
+}
+

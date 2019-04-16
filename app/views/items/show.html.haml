@@ -1,13 +1,13 @@
 = render "shared/header"
 %nav.bread-crumbs
-  %ul
-    %li
+  %ul.bread-crumbs__ul
+    %li.bread-crumbs__ul-list
       = link_to root_path do
-        %span
+        %span.bread-crumbs__ul-list--title
           メルカリ
       = fa_icon("angle-right")
-    %li
-      %span.title
+    %li.bread-crumbs__ul-list
+      %span.bread-crumbs__ul-list--title
         ○○○○○○○○
 
 
