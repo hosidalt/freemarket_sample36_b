@@ -12,7 +12,6 @@
 |birth_year|integer|null: false|
 |birth_month|integer|null: false|
 |birth_day|integer|null: false|
-|credit|integer|null: false, unique: true|
 |postal_code|string|null: false|
 |prefecture|string|null :false|
 |city|string|null: false|
@@ -31,6 +30,7 @@
 - has_many :points
 - has_many :procceeds
 - has_many :statuses
+- has_many :cards
 
 
 ## itemsテーブル
@@ -247,6 +247,16 @@ belongs_to :user
 |------|----|-------|
 |proceeds|integer|null: false|
 |user_id|references|null: false|
+
+### Association
+belongs_to :user
+
+## cardsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false|
+|customer_id|string|null: false|
+|card_id|string|null: false|
 
 ### Association
 belongs_to :user
