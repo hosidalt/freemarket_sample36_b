@@ -3,22 +3,21 @@ $color-dark_gray: #eeeeee;
 $color-white: #ffffff;
 $color-black: #000000;
 
-
 @mixin signup-box($width,$height){
-    width:  $width;
+    width: $width;
     height: $height;
 }
 
 @mixin signup-btn{
-    width:  320px;
+    width: 320px;
     height: 50px;
 }
 
 @mixin signup-fa-position($padding,$right,$top){
     position: relative;
-    padding:$padding;
-    right:  $right;
-    top:    $top;
+    padding: $padding;
+    right: $right;
+    top: $top;
 }
 
 
