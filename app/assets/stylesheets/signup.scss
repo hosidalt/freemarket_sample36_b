@@ -5,20 +5,20 @@ $color-black: #000000;
 
 
 @mixin signup-box($width,$height){
-    width: $width;
+    width:  $width;
     height: $height;
 }
 
 @mixin signup-btn{
-    width: 334px;
+    width:  320px;
     height: 50px;
 }
 
 @mixin signup-fa-position($padding,$right,$top){
     position: relative;
-    padding: $padding;
-    right: $right;
-    top: $top;
+    padding:$padding;
+    right:  $right;
+    top:    $top;
 }
 
 
@@ -27,22 +27,25 @@ $color-black: #000000;
     padding: 0px;
     background-color: $color-gray;
 }
+.signup-main{
+    @include signup-box(700px,408px);
+    margin: 0px auto 0px;
+}
+
 
 .signup-container{
 
     &__head{
-        @include signup-box(668px,33px);
+        @include signup-box(700px,97px);
         padding: 32px 16px;
-        margin: auto;
-        font-size: 18px;
+        font-size: 22px;
         font-weight: bold;
         text-align: center;
         background-color: $color-white;
     }
     &__inner{
-        @include signup-box(572px,182px);
+        @include signup-box(700px,311px);
         padding: 64px;
-        margin: auto;
         background-color: $color-white;
         border-top: 1px solid $color-gray;
     }
