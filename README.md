@@ -12,7 +12,6 @@
 |birth_year|integer|null: false|
 |birth_month|integer|null: false|
 |birth_day|integer|null: false|
-|credit|integer|null: false, unique: true|
 |postal_code|string|null: false|
 |prefecture|string|null :false|
 |city|string|null: false|
@@ -30,7 +29,7 @@
 - has_many :adressees
 - has_many :points
 - has_many :procceeds
-- has_many :statuses
+- has_many :cards
 
 
 ## itemsテーブル
@@ -47,25 +46,25 @@
 - has_many :category, through: :item_categories
 - has_many :item_categories
 - belongs_to :user
-- belongs_to :status
 - belongs_to :evalution
 - belongs_to :good
 - belongs_to :area
 - belongs_to :brand
 - belongs_to :fee
 - belongs_to :sipping_method
+- has_one :status
 
 
 ## statusesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |stage|integer|null: false|
-|buyer_id|references|null: false, unique: true|
+|item_id|references|null: false, unique: true|
+|buyer_id|references|null: false|
 
 ### Association
-- has_many :users
-- has_many :items
 - has_many :comments
+- belongs_to :item
 
 
 ## categoriesテーブル
@@ -247,6 +246,16 @@ belongs_to :user
 |------|----|-------|
 |proceeds|integer|null: false|
 |user_id|references|null: false|
+
+### Association
+belongs_to :user
+
+## cardsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false|
+|customer_id|string|null: false|
+|card_id|string|null: false, unique: true|
 
 ### Association
 belongs_to :user
