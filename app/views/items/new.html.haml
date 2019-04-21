@@ -8,10 +8,12 @@
         %span 必須
       %p 最大10枚までアップロードできます
       .clearfix
-        .item-images-container
+        #item-images-container
           %ul#images-lists
+        #item-images-container2.hidden
+          %ul#images-lists2.hidden
         %label
-          %input{type: "file", name: "images[]", multiple: true, id: "item-images"}
+          %input{type: "file", name: "images[]", multiple: true, id: "input-images"}
           #post-images.have-0-item
             %h4#erasing-sentence
               ドラッグアンドドロップ
@@ -94,7 +96,7 @@
               %h3
                 価格
                 %span 必須
-              %input{placeholder: "例）300"}
+              %input{placeholder: "例）300", id: "price-input"}
           .commission
             .clearfix
               %h3 販売手数料(10%)
