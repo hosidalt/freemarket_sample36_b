@@ -1,11 +1,10 @@
 class StatusesController < ApplicationController
 
-  require "payjp"
-
   def index
   end
 
   def show
+    @card = Card.find(1)
   end
 
   def new
