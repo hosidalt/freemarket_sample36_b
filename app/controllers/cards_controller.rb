@@ -3,12 +3,16 @@ class CardsController < ApplicationController
   require "payjp"
 
   def index
+    card = Card.where(user_id: 1).first
+    if card.blank?
+      redirect_to mypage_card_path(1, 1)
+    end
   end
 
   def show
     card = Card.where(user_id: 1).first
     if card.blank?
-      redirect_to action: "new"
+      redirect_to new_mypage_card_path(1)
     else
       Payjp.api_key = PAYJP_SECRET_KEY
       customer = Payjp::Customer.retrieve(card.customer_id)
