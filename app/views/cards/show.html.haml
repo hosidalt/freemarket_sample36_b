@@ -14,6 +14,6 @@
             = "#{@exp_month}/#{@exp_year}"
         = form_for :cards, url: {action: "destroy"}, html: {method: :delete} do |f|
           = f.hidden_field :card_id, value: ""
-          = f.submit "削除する"
+          = f.submit "削除する", data: {confirm: "一覧から削除しますか"}
   = render "mypages/side-bar"
 = render "shared/footer"
