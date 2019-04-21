@@ -139,6 +139,14 @@
           margin: 10px 0 0;
         }
       }
+      form{
+        margin: 20px 0 0;
+        input[type="submit"]{
+          height: 50px;
+          width: 100px;
+        }
+      }
+
     }
   }
 }
