@@ -19,6 +19,8 @@ class StatusesController < ApplicationController
       customer: card.customer_id,
       currency: "jpy"
     )
+    buy_item = Status.new(buy_params)
+    buy_item.save
     redirect_to root_path
   end
 
@@ -32,6 +34,11 @@ class StatusesController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+  def buy_params
+    params.require(:statuses).permit(:stage, :item_id, :buyer_id)
   end
 
 

@@ -24,6 +24,9 @@
           .buy__item--form-error
             配送先と支払い方法の入力を完了してください。
           = f.number_field :amount, type: "hidden", value: 3000
+          = f.number_field :stage, type: "hidden", value: 1
+          = f.number_field :item_id, type: "hidden", value: 1
+          = f.number_field :buyer_id, type: "hidden", value: 1
           = f.submit "購入する", class: "buy__item--form-submit"
     .buy__user-info
       .buy__user-info-inner
