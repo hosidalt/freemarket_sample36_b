@@ -12,7 +12,7 @@
             = "**** **** **** " + @default_card_information.last4
           .card-box__show-form--list-limit
             = "#{@exp_month}/#{@exp_year}"
-        = form_for :cards, url: {action: "delete"}, html: {method: :post} do |f|
+        = form_for :cards, url: {action: "destroy"}, html: {method: :delete} do |f|
           = f.hidden_field :card_id, value: ""
           = f.submit "削除する"
   = render "mypages/side-bar"

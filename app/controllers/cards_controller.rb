@@ -1,7 +1,5 @@
 class CardsController < ApplicationController
 
-  require "payjp"
-
   def index
     card = Card.where(user_id: 1).first
     if card.blank?
@@ -28,7 +26,7 @@ class CardsController < ApplicationController
     redirect_to mypage_card_path(1, 1) if card.exists?
   end
 
-  def create_card
+  def create
     Payjp.api_key = PAYJP_SECRET_KEY
     if params[:payjp_token].blank?
       redirect_to new_mypage_card_path(:mypage_id)
@@ -47,19 +45,15 @@ class CardsController < ApplicationController
     end
   end
 
-  def create
-  end
-
   def edit
   end
 
   def update
   end
 
-  def delete
+  def destroy
     card = Card.where(user_id: 1).first
-    if card.blank?
-    else
+    if card.present?
       customer = Payjp::Customer.retrieve(card.customer_id)
       customer.delete
       card.delete

@@ -3,8 +3,6 @@ Rails.application.routes.draw do
 
   root 'items#index'
   resources :items
-  post "cards/create_card", to: "cards#create_card"
-  post 'cards/delete', to: 'cards#delete'
   resources :mypages, only: [:index] do
     resources :cards
   end

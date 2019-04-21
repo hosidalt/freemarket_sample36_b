@@ -5,7 +5,7 @@
     %h2.card-box__header
       クレジットカード情報入力
     .card-box__new
-      = form_for :cards, url: {action: "create_card"}, html: { method: :post, class: "card-box__new-form", id: "charge-form"} do |f|
+      = form_for :cards, url: {action: "create"}, html: { method: :post, class: "card-box__new-form", id: "charge-form"} do |f|
         = f.label :number, "カード情報", class: "card-box__new-form--label" do
           カード情報
           %span.card-box__new-form-label-must
