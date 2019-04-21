@@ -4,7 +4,15 @@ class StatusesController < ApplicationController
   end
 
   def show
-    @card = Card.find(1)
+    card = Card.where(user_id: 1).first
+    if card.present?
+    Payjp.api_key = PAYJP_SECRET_KEY
+    customer = Payjp::Customer.retrieve(card.customer_id)
+    @card = card
+    @default_card_information = customer.cards.retrieve(card.card_id)
+    @exp_month = @default_card_information.exp_month.to_s
+    @exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+    end
   end
 
   def new
