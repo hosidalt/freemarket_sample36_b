@@ -64,7 +64,7 @@ class CardsController < ApplicationController
       customer.delete
       card.delete
     end
-    redirect_to new_mypage_card_path(1, 1)
+    redirect_to new_mypage_card_path(1)
   end
 
 end
