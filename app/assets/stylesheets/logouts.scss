@@ -1,0 +1,41 @@
+.clearfix:after {
+content: '';
+display: block;
+clear: both;
+}
+.l-container {
+  width: 1020px;
+  margin: 40px auto 0;
+  padding: 0 0 40px;
+  .logout {
+    float:right;
+    width: 700px;
+    &__container:first-child{
+      margin: 0;
+    }
+    &__container{
+      background: #fff;
+      &__form {
+        padding: 64px;
+        border-top: 1px solid #f5f5f5;
+        &__content{
+          max-width: 320px;
+          margin: 0 auto;
+        }
+        .btn-default {
+          width: 100%;
+          line-height: 48px;
+          font-size: 14px;
+          transition: all ease-out .3s;
+          cursor: pointer;
+          text-align: center;
+        }
+        .btn-red {
+          background: #ea352d;
+          border: 1px solid #ea352d;
+          color: #fff;
+        }
+      }
+    }
+  }
+}

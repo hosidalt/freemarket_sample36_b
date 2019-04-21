@@ -7,11 +7,10 @@ Rails.application.routes.draw do
     resources :cards
   end
   resources :profiles, only: [:index]
+  resources :logouts, only: [:index]
   resources :identifications, only: [:index]
   resources :users
   post "statuses/pay", to: "statuses#pay"
   resources :statuses
-
-
 end
 
