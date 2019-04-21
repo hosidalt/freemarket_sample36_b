@@ -1,9 +1,16 @@
-console.log('bad');
 document.addEventListener('DOMContentLoaded', function(e) {
-  var inputFile = document.getElementById('item-images');
+  var inputFile = document.getElementById('input-images');
   var some = document.getElementById('erasing-sentence');
   var imagesLists = document.getElementById('images-lists');
   var postArea = document.getElementById('post-images');
+  var imagesContainer = document.getElementById('item-images-container');
+  var imagesLists2 = document.getElementById('images-lists2');
+  var imagesContainer2 = document.getElementById('item-images-container2');
+  var num = 0;
+  var priceInput = document.getElementById('price-input');
+  var commissionResult = document.getElementById('commission-result');
+  var benefitResult = document.getElementById('benefit-result');
+
   function handleFileSelect(evt) {
     var files = evt.target.files;
     for (var i = 0, f; f = files[i]; i++) {
@@ -14,34 +21,91 @@ document.addEventListener('DOMContentLoaded', function(e) {
 
       reader.onload = (function(theFile) {
         return function(e) {
-          var li = document.createElement('li');
-          li.innerHTML = `<figure class="item-figure">
-  <img src="${e.target.result}" class="item-image" title="${escape(theFile.name)}">
-</figure>
-<div class="clearfix">
-  <a href="#" id="edit">編集</a>
-  <a href="#" id="delete">削除</a>
-</div>`
-          console.log(li);
-          imagesLists.appendChild(li);
-          console.log(imagesLists.children.length);
-          postArea.classList.remove(`have-${imagesLists.children.length - 1}-item`);
-          postArea.classList.add(`have-${imagesLists.children.length}-item`)
-          if (imagesLists.children.length !== 0) {
-            var deleteImage = document.getElementById('delete');
-            deleteImage.addEventListener('click', function() {
-              this.remove();
-              console.log(this);
-              console.log(this.parentNode);
-              this.previousElementSibling.remove();
+          num++;
+          console.log(num);
+          function createList() {
+            var li = document.createElement('li');
+            var figure = document.createElement('figure');
+            figure.classList.add('item-figure');
+            var img = document.createElement('img');
+            img.src = e.target.result;
+            img.classList.add('item-image');
+            img.title = escape(theFile.name);
+            var clearfixDiv = document.createElement('div');
+            clearfixDiv.classList.add('clearfix');
+            var edit = document.createElement('a');
+            var remove = document.createElement('a');
+            edit.setAttribute("id", "edit");
+            remove.setAttribute("id", "remove");
+            edit.textContent = "編集";
+            remove.textContent = "削除";
+            li.appendChild(figure);
+            figure.appendChild(img);
+            li.appendChild(clearfixDiv);
+            clearfixDiv.appendChild(edit);
+            clearfixDiv.appendChild(remove);
+            remove.addEventListener('click', function() {
+              console.log()
+              postArea.classList.remove(`have-${num}-item`);
               this.parentNode.parentNode.remove();
+              this.parentNode.remove();
+              this.remove();
+              num--;
+              postArea.classList.add(`have-${num}-item`)
             }, false);
+            return li;
           };
+
+          function changePostArea() {
+            postArea.classList.remove(`have-${num - 1}-item`);
+            postArea.classList.add(`have-${num}-item`);
+          };
+
+          if ( num <= 5 ) {
+            var list = createList();
+            console.log(list);
+            imagesLists.appendChild(list);
+            changePostArea();
+          }else if ( num == 6 ) {
+            imagesLists2.classList.remove('hidden');
+            imagesContainer2.classList.remove('hidden');
+            var list = createList();
+            imagesLists2.appendChild(list);
+            changePostArea();
+          }else if ( num > 6 ) {
+            var list = createList();
+            imagesLists2.appendChild(list);
+            changePostArea();
+          }
         };
       })(f);
       reader.readAsDataURL(f);
     }
   }
   inputFile.addEventListener('change', handleFileSelect, false);
+
+  var inputPrice = document.getElementById('price-input');
+  var commission = document.getElementById('commission-result');
+  var benefit = document.getElementById('benefit-result');
+  var hundredsPattern = /^[3-9]\d{2}$/;
+  var morePattern = /^[1-9]\d{3,6}$/;
+  inputPrice.addEventListener('keyup', function() {
+    if ( hundredsPattern.test(inputPrice.value) || morePattern.test(inputPrice.value) ) {
+      var commissionResult = separate(Math.floor( inputPrice.value / 10 ));
+      commission.textContent = "¥" + commissionResult;
+      var benefitResult = separate( inputPrice.value - Math.floor( inputPrice.value / 10 ) );
+      benefit.textContent = "¥" + benefitResult;
+    }else {
+      commission.textContent = "-";
+      benefit.textContent = "-";
+    };
+  });
+
+  function separate(num){
+    return String(num).replace( /(\d)(?=(\d\d\d)+(?!\d))/g, '$1,');
+  }
+
 });
+
+
 
