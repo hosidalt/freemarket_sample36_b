@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190324112348) do
+ActiveRecord::Schema.define(version: 20190420133253) do
+
+  create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id",     null: false
+    t.string   "customer_id", null: false
+    t.string   "card_id",     null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["user_id"], name: "index_cards_on_user_id", using: :btree
+  end
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "category",   null: false
@@ -38,6 +47,21 @@ ActiveRecord::Schema.define(version: 20190324112348) do
     t.index ["seller_id"], name: "index_items_on_seller_id", using: :btree
   end
 
+  create_table "prefectures", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "statuses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "stage",      null: false
+    t.integer  "item_id",    null: false
+    t.integer  "buyer_id",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["buyer_id"], name: "index_statuses_on_buyer_id", using: :btree
+    t.index ["item_id"], name: "index_statuses_on_item_id", using: :btree
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                                default: "", null: false
     t.string   "encrypted_password",                   default: "", null: false
@@ -54,7 +78,6 @@ ActiveRecord::Schema.define(version: 20190324112348) do
     t.integer  "birth_year",                                        null: false
     t.integer  "birth_month",                                       null: false
     t.integer  "birth_day",                                         null: false
-    t.integer  "credit",                                            null: false
     t.string   "postal_code",                                       null: false
     t.string   "prefecture",                                        null: false
     t.string   "city",                                              null: false

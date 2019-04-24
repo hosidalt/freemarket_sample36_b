@@ -1,4 +1,8 @@
 @import "font-awesome";
+@import "_sub-footer";
+@import "_sub-header";
+@import "signup";
+@import "login";
 @import "./mypages";
 @import "./variable";
 @import "./reset";
@@ -12,5 +16,9 @@
 @import "items-new";
 @import "./profiles";
 @import "./side-bar";
+@import "./logouts";
+@import "./identifications";
 @import "cards";
-@import "./bread_crumbs"
+@import "./bread_crumbs";
+
+
