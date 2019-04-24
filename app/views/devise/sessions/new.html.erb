@@ -23,5 +23,11 @@
     <div class="actions">
       <%= f.submit "Log in" %>
     </div>
+
+        <div class="actions">
+      <%= link_to "sign in with google", user_google_oauth2_omniauth_authorize_path %>
+
+    </div>
   <% end %>
 </div>
+

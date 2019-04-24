@@ -49,6 +49,7 @@ group :development, :test do
   gem 'capistrano3-unicorn'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
+  gem 'pry-rails'
 end
 
 group :development do
@@ -67,3 +68,6 @@ gem 'haml-rails'
 gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'active_hash'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+# gem 'dotenv-rails'
