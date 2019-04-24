@@ -1,0 +1,109 @@
+$color-gray: #f5f5f5;
+$color-dark_gray: #eeeeee;
+$color-white: #ffffff;
+$color-black: #000000;
+$color-red: #ea352d;
+
+@mixin login-box($width,$height){
+  width: $width;
+  height: $height;
+}
+
+@mixin login-btn{
+  width: 326px;
+  height: 48px;
+}
+
+@mixin signup-fa-position($padding,$right,$top){
+  position: relative;
+  padding: $padding;
+  right: $right;
+  top: $top;
+}
+
+.fa-facebook-official{
+  content: '\e013';
+  font-size: 20px;
+  @include signup-fa-position(0,68px,0)
+}
+
+.login-content{
+  @include login-box(1440px,1079px);
+  background-color: $color-gray;
+
+  .login-main__content{
+    @include login-box(456px,731px);
+    margin: 0 auto;
+    background-color: #fff;
+    .login-no-account{
+      @include login-box(456px,144px);
+      padding: 40px 64px;
+      p{
+        @include login-box(328px,14px);
+        text-align: center;
+      }
+      a{
+        display: block;
+        @include login-box(326px,40px);
+        margin: 8px 0 0;
+        text-align: center;
+        text-decoration: none;
+        background: #0099e8;
+        line-height: 40px;
+        color: $color-white;
+      }
+    }
+    .login-sns{
+      @include login-box(328px,194px);
+      padding: 32px 64px;
+      margin: 0;
+      border: 1px solid $color-gray;
+      .btn-sns-facebook{
+        @include login-btn;
+      }
+      .btn-sns-google{
+        @include login-btn;
+        margin: 16px 0 0;
+        background: #fff image-url('signup/google_logo.jpg') no-repeat 3px top;
+        background-size: 8%;
+        background-position: bottom 10px right 275px;
+      }
+    }
+    .login-form{
+      @include login-box(456px,350px);
+      padding: 24px 64px 32px;
+      .input-default{
+        @include login-box(294px,48px);
+        padding: 10px 16px 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+      }
+      &__inner:first-child{
+        margin: 0;
+      }
+      &__inner{
+        margin: 24px 0 0;
+        .g-recaptcha{
+          margin: auto;
+        }
+      }
+
+      &__submit{
+        @include login-box(326px,48px);
+        margin: 24px 0 0;
+        color: $color-white;
+        background-color: $color-red;
+        border: 1px solid $color-red;
+      }
+      a{
+        display: block;
+        text-decoration: none;
+        font-size:  14px;
+        margin: 40px 0 0;
+      }
+      a:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+}
