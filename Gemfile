@@ -50,6 +50,8 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'pry-doc'
 end
 
 group :development do
@@ -66,8 +68,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'haml-rails'
 gem 'font-awesome-rails'
-gem 'jquery-rails'
 gem 'active_hash'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
-# gem 'dotenv-rails'
+gem 'payjp'
