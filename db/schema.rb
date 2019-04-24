@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20190420133253) do
 
   create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -53,6 +52,7 @@ ActiveRecord::Schema.define(version: 20190420133253) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
   create_table "sns_credentials", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.string   "provider"
@@ -63,6 +63,8 @@ ActiveRecord::Schema.define(version: 20190420133253) do
     t.datetime "updated_at", null: false
   end
 
+=======
+>>>>>>> ayukua/master
   create_table "statuses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "stage",      null: false
     t.integer  "item_id",    null: false
