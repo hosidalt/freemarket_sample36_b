@@ -41,7 +41,6 @@ document.addEventListener('DOMContentLoaded', function(e) {
             clearfixDiv.appendChild(edit);
             clearfixDiv.appendChild(remove);
             remove.addEventListener('click', function() {
-              console.log()
               postArea.classList.remove(`have-${num}-item`);
               this.parentNode.parentNode.remove();
               this.parentNode.remove();
@@ -190,9 +189,6 @@ document.addEventListener('DOMContentLoaded', function(e) {
       document.getElementById('how-to-delivery').remove();
     };
   });
-
-
-
 });
 
 
