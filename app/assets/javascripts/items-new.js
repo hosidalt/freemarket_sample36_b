@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function(e) {
       reader.onload = (function(theFile) {
         return function(e) {
           num++;
-          console.log(num);
           function createList() {
             var li = document.createElement('li');
             var figure = document.createElement('figure');
@@ -64,7 +63,6 @@ document.addEventListener('DOMContentLoaded', function(e) {
 
           if ( num <= 5 ) {
             var list = createList();
-            console.log(list);
             imagesLists.appendChild(list);
             changePostArea();
           }else if ( num == 6 ) {
@@ -123,7 +121,6 @@ document.addEventListener('DOMContentLoaded', function(e) {
       </select>`;
       categoryForm.appendChild(selectWrap);
       var secondCategory = document.getElementById('second-category');
-      console.log(secondCategory);
       secondCategory.addEventListener('change', function() {
         if (this.value !== "" && document.getElementById('third-category') === null) {
           var selectWrap = document.createElement('div');
