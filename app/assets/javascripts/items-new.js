@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
   var imagesContainer = document.getElementById('item-images-container');
   var imagesLists2 = document.getElementById('images-lists2');
   var imagesContainer2 = document.getElementById('item-images-container2');
-  var num = 0; //input file内の画像の枚数を把握
+  var num = 0;
 
   function handleFileSelect(evt) {
     var files = evt.target.files;
@@ -47,7 +47,6 @@ document.addEventListener('DOMContentLoaded', function(e) {
               this.parentNode.parentNode.remove();
               this.parentNode.remove();
               this.remove();
-              //thisを最後に削除しないと、parentNodeなどが認識されなくなる
               num--;
               postArea.classList.add(`have-${num}-item`);
               if ( num < 6 ) {
@@ -159,16 +158,6 @@ document.addEventListener('DOMContentLoaded', function(e) {
       };
     };
   });
-  //データを引っ張った時に必要になる関数。
-  // function getSelectLabel(idname){
-  //   console.log(idname);
-  //   var idx = idname.selectedIndex;       //インデックス番号を取得
-  //   var val = idname.options[idx].value;  //value値を取得
-  //   var txt  = idname.options[idx].text;  //ラベルを取得
-  //   console.log(idx);
-  //   console.log(val);
-  //   console.log(txt);
-  // };
 
   var deliveryCost = document.getElementById('delivery-cost');
   var deliveryBox = document.getElementById('delivery-box');
