@@ -16,7 +16,9 @@ class Users::OmniauthCallbacksController < ApplicationController
 
 
   def google_oauth2
-    @user = User.find_for_google_oauth2(request.env["omniauth.auth"])
+    @user = SnsCredential.find_for_google_oauth2(request.env["omniauth.auth"])
+
+
 
     if @user.persisted?
       set_flash_message(:notice, :success, :kind => "google_oauth2") if is_navigational_format?
