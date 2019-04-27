@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190426102021) do
+ActiveRecord::Schema.define(version: 20190427095904) do
 
   create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",     null: false
@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(version: 20190426102021) do
     t.datetime "remember_created_at"
     t.datetime "created_at",                                        null: false
     t.datetime "updated_at",                                        null: false
-    t.string   "nickname",                                          null: false
+    t.string   "nickname"
     t.string   "family_name",                                       null: false
     t.string   "first_name",                                        null: false
     t.string   "kana_family_name",                                  null: false
