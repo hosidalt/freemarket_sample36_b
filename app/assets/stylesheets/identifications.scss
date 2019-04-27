@@ -4,13 +4,15 @@ display: block;
 clear: both;
 }
 
-p {
+.identification__content__head {
+  p {
   margin: 8px 0 0;
   line-height: 1.5;
-}
-a {
-  color: #0099e8;
-  text-decoration: none;
+  }
+  a {
+    color: #0099e8;
+    text-decoration: none;
+  }
 }
 
 .l-container {
