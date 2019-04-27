@@ -13,7 +13,7 @@
 
 %section.item-box
   %h1.item-box__header
-    商品タイトル
+    = @item.name
   .item-box__main
     .item-box__main--image
       .main-photo
@@ -49,7 +49,7 @@
           %th
             出品者
           %td
-            = link_to "出品者名前", root_path , class: "item-box__main--table-user_name"
+            = link_to @seller.nickname, root_path , class: "item-box__main--table-user_name"
             .item-box__main--table-icon
               .good-icon
                 = image_tag "faceicon/laugh-solid.svg"
@@ -105,7 +105,7 @@
             1~2日程度
   .item-box__price
     %span.item-box__price--item_price
-      ¥ 2,200
+      = "¥ #{@item.price.to_s(:delimited)}"
     %span.item-box__price--item_tax
       (税込)
     %span.item-box__price--item_shipping_fee
@@ -235,90 +235,21 @@
 .items-in-user-profile
   .items-in-user-profile__body
     .items-in-user-profile__body-header
-      〇〇さんのその他の出品
+      = "#{@seller.nickname}さんのその他の出品"
     .items-in-user-profile__body-boxs
-      = link_to root_path, class: "items-in-user-profile__body-box" do
-        .items-in-user-profile__body-box--image
-        .items-in-user-profile__body-box--text
-          .items-in-user-profile__body-box--text_header
-            商品名称はこちらです商品名称はこちらです
-          .items-in-user-profile__body-box--text_info
-            .items-in-user-profile__body-box--text_info-price
-              ¥ 2,222-
-            .items-in-user-profile__body-box--text_info-icon
-              = fa_icon("heart", class: "items-in-user-profile__body-box--text_info-icon-heart")
-              %span.items-in-user-profile__body-box--text_info-icon-conut
-                3
-          .items-in-user-profile__body-box--text_tax
-            (税込)
-      = link_to root_path, class: "items-in-user-profile__body-box" do
-        .items-in-user-profile__body-box--image
-        .items-in-user-profile__body-box--text
-          .items-in-user-profile__body-box--text_header
-            商品名称はこちらです
-          .items-in-user-profile__body-box--text_info
-            .items-in-user-profile__body-box--text_info-price
-              ¥ 2,222-
-            .items-in-user-profile__body-box--text_info-icon
-              = fa_icon("heart", class: "items-in-user-profile__body-box--text_info-icon-heart")
-              %span.items-in-user-profile__body-box--text_info-icon-conut
-                3
-          .items-in-user-profile__body-box--text_tax
-            (税込)
-      = link_to root_path, class: "items-in-user-profile__body-box" do
-        .items-in-user-profile__body-box--image
-        .items-in-user-profile__body-box--text
-          .items-in-user-profile__body-box--text_header
-            商品名称はこちらです
-          .items-in-user-profile__body-box--text_info
-            .items-in-user-profile__body-box--text_info-price
-              ¥ 2,222-
-            .items-in-user-profile__body-box--text_info-icon
-              = fa_icon("heart", class: "items-in-user-profile__body-box--text_info-icon-heart")
-              %span.items-in-user-profile__body-box--text_info-icon-conut
-                3
-          .items-in-user-profile__body-box--text_tax
-            (税込)
-      = link_to root_path, class: "items-in-user-profile__body-box" do
-        .items-in-user-profile__body-box--image
-        .items-in-user-profile__body-box--text
-          .items-in-user-profile__body-box--text_header
-            商品名称はこちらです
-          .items-in-user-profile__body-box--text_info
-            .items-in-user-profile__body-box--text_info-price
-              ¥ 2,222-
-            .items-in-user-profile__body-box--text_info-icon
-              = fa_icon("heart", class: "items-in-user-profile__body-box--text_info-icon-heart")
-              %span.items-in-user-profile__body-box--text_info-icon-conut
-                3
-          .items-in-user-profile__body-box--text_tax
-            (税込)
-      = link_to root_path, class: "items-in-user-profile__body-box" do
-        .items-in-user-profile__body-box--image
-        .items-in-user-profile__body-box--text
-          .items-in-user-profile__body-box--text_header
-            商品名称はこちらです
-          .items-in-user-profile__body-box--text_info
-            .items-in-user-profile__body-box--text_info-price
-              ¥ 2,222-
-            .items-in-user-profile__body-box--text_info-icon
-              = fa_icon("heart", class: "items-in-user-profile__body-box--text_info-icon-heart")
-              %span.items-in-user-profile__body-box--text_info-icon-conut
-                3
-          .items-in-user-profile__body-box--text_tax
-            (税込)
-      = link_to root_path, class: "items-in-user-profile__body-box" do
-        .items-in-user-profile__body-box--image
-        .items-in-user-profile__body-box--text
-          .items-in-user-profile__body-box--text_header
-            商品名称はこちらです
-          .items-in-user-profile__body-box--text_info
-            .items-in-user-profile__body-box--text_info-price
-              ¥ 2,222-
-            .items-in-user-profile__body-box--text_info-icon
-              = fa_icon("heart", class: "items-in-user-profile__body-box--text_info-icon-heart")
-              %span.items-in-user-profile__body-box--text_info-icon-conut
-                3
-          .items-in-user-profile__body-box--text_tax
-            (税込)
+      - @seller_items.each do |seller_item|
+        = link_to root_path, class: "items-in-user-profile__body-box" do
+          .items-in-user-profile__body-box--image
+          .items-in-user-profile__body-box--text
+            .items-in-user-profile__body-box--text_header
+              = seller_item.name
+            .items-in-user-profile__body-box--text_info
+              .items-in-user-profile__body-box--text_info-price
+                = "¥ #{seller_item.price.to_s(:delimited)}"
+              .items-in-user-profile__body-box--text_info-icon
+                = fa_icon("heart", class: "items-in-user-profile__body-box--text_info-icon-heart")
+                %span.items-in-user-profile__body-box--text_info-icon-conut
+                  3
+            .items-in-user-profile__body-box--text_tax
+              (税込)
 = render "shared/footer"
