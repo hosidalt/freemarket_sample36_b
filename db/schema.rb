@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190420133253) do
+ActiveRecord::Schema.define(version: 20190427095904) do
 
   create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",     null: false
@@ -23,9 +23,18 @@ ActiveRecord::Schema.define(version: 20190420133253) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "category",   null: false
-    t.integer  "parent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "ancestry"
+    t.index ["ancestry"], name: "index_categories_on_ancestry", using: :btree
+  end
+
+  create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "image",      limit: 65535
+    t.integer  "item_id"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["item_id"], name: "index_images_on_item_id", using: :btree
   end
 
   create_table "item_categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -82,7 +91,7 @@ ActiveRecord::Schema.define(version: 20190420133253) do
     t.string   "prefecture",                                        null: false
     t.string   "city",                                              null: false
     t.integer  "block_number",                                      null: false
-    t.string   "bilding_name"
+    t.string   "building_name"
     t.string   "tel"
     t.string   "profil_image"
     t.text     "profil_comment",         limit: 65535
@@ -90,4 +99,5 @@ ActiveRecord::Schema.define(version: 20190420133253) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "images", "items"
 end
