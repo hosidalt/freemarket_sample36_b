@@ -3,4 +3,5 @@ class Item < ApplicationRecord
   has_many    :item_categories
   belongs_to  :user
   has_one     :status
+  has_many    :images
 end
