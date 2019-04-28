@@ -3,6 +3,8 @@ $(function(){
   var itemsIndex = $(".sub-photo__list").length;
   var itemsWidth = (300 * itemsIndex) + "px"
   $(".main-photo__lists").attr("style", "width:" + itemsWidth);
+  $(".main-photo__list:first").addClass("active");
+  $(".sub-photo__list:first").addClass("active");
 
   if (itemsIndex < 5) {
     $(".sub-photo__list").attr("style", "width:" + "75px");
