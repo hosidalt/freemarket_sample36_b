@@ -4,6 +4,10 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item = Item.find(1)
+    @images = @item.images
+    @seller = User.find(@item.seller_id)
+    @seller_items = Item.where(seller_id: @seller.id).where.not(id: @seller.id)
   end
 
   def new
