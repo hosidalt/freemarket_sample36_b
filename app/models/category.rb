@@ -5,10 +5,10 @@ class Category < ApplicationRecord
   require "csv"
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
-      import_data = new
-      import_data.attributes = row.to_hash.slice(*updatable_attributes)
-      import_data.id = row.to_hash.values[0]
-      import_data.save!
+      category = new
+      category.attributes = row.to_hash.slice(*updatable_attributes)
+      category.id = row.to_hash.values[0]
+      category.save!
     end
   end
 
