@@ -12,7 +12,7 @@ class CardsController < ApplicationController
     if card.blank?
       redirect_to new_mypage_card_path(1)
     else
-      Payjp.api_key = PAYJP_SECRET_KEY
+      Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
       customer = Payjp::Customer.retrieve(card.customer_id)
       @card = card
       @default_card_information = customer.cards.retrieve(card.card_id)
@@ -27,7 +27,7 @@ class CardsController < ApplicationController
   end
 
   def create
-    Payjp.api_key = PAYJP_SECRET_KEY
+    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
     if params[:payjp_token].blank?
       redirect_to new_mypage_card_path(:mypage_id)
     else
