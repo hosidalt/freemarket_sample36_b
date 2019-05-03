@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function(e) {
-  var inputFile = document.getElementById('input-images');
+  var inputFile = document.getElementById('item_images_attributes_0_image');
   var some = document.getElementById('erasing-sentence');
   var imagesLists = document.getElementById('images-lists');
   var postArea = document.getElementById('post-images');
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
   }
   inputFile.addEventListener('change', handleFileSelect, false);
 
-  var inputPrice = document.getElementById('price-input');
+  var inputPrice = document.getElementById('item_price');
   var commission = document.getElementById('commission-result');
   var benefit = document.getElementById('benefit-result');
   var hundredsPattern = /^[3-9]\d{2}$/;
@@ -103,90 +103,101 @@ document.addEventListener('DOMContentLoaded', function(e) {
     return String(num).replace( /(\d)(?=(\d\d\d)+(?!\d))/g, '$1,');
   }
 
-  var firstCategory = document.getElementById('first-category-select');
+  var parentCategory = document.getElementById('item_parent_category_id');
+  var childCategory = document.getElementsByClassName('childCategory');
+  var grandchildCategory = document.getElementsByClassName('grandchildCategory');
   var categoryForm = document.getElementById('category-form');
-
-  firstCategory.addEventListener('change', function() {
-    if (this.value !== "" && document.getElementById('second-category') === null) {
-      var selectWrap = document.createElement('div');
-      selectWrap.classList.add('select-wrap');
-      selectWrap.innerHTML = `<select id="second-category">
-      <option value="">---</value>
-      <option value="レディース">レディース</value>
-      <option value="メンズ">メンズ</value>
-      <option value="ベビー・キッズ">ベビー・キッズ</value>
-      <option value="インテリア・住まい・小物">インテリア・住まい・小物</value>
-      <option value="本・音楽・ゲーム">本・音楽・ゲーム</value>
-      </select>`;
-      categoryForm.appendChild(selectWrap);
-      var secondCategory = document.getElementById('second-category');
-      secondCategory.addEventListener('change', function() {
-        if (this.value !== "" && document.getElementById('third-category') === null) {
-          var selectWrap = document.createElement('div');
-          selectWrap.classList.add('select-wrap');
-          selectWrap.innerHTML = `<select id="third-category">
-          <option value="">---</value>
-          <option value="">レディース</value>
-          <option value="">メンズ</value>
-          <option value="">ベビー・キッズ</value>
-          <option value="">インテリア・住まい・小物</value>
-          <option value="">本・音楽・ゲーム</value>
-          </select>`;
-          var thirdCategory = document.getElementById('third-category');
-          categoryForm.appendChild(selectWrap);
-        };
-      });
-      secondCategory.addEventListener('change', function() {
-        var thirdCategory = document.getElementById('third-category');
-        if (this.value === "" && thirdCategory != null) {
-          thirdCategory.parentNode.remove();
-          thirdCategory.remove();
-        };
-      });
-    }else if (this.value === "") {
-      var secondCategory = document.getElementById('second-category');
-      secondCategory.parentNode.remove();
-      secondCategory.remove();
-      if (document.getElementById('third-category') !== null) {
-        var thirdCategory = document.getElementById('third-category');
-        thirdCategory.parentNode.remove();
-        thirdCategory.remove();
-      };
+  var shippingMethod = document.getElementById('shipping-method-select');
+  var feePayer = document.getElementById('item_delivery_fee_payer');
+  feePayer.addEventListener('change', function() {
+    if (feePayer.value !== "") {
+      shippingMethod.classList.remove('hidden');
+    }else if (feePayer.value === "") {
+      shippingMethod.classList.add('hidden');
     };
   });
 
-  var deliveryCost = document.getElementById('delivery-cost');
-  var deliveryBox = document.getElementById('delivery-box');
-  deliveryCost.addEventListener('change', function() {
-    if (this.value !== "" && document.getElementById('how-to-delivery') === null) {
-      var formHowDelivery = document.createElement('div');
-      formHowDelivery.classList.add('form-group');
-      var h3 = document.createElement('h3');
-      h3.textContent = "配送の方法";
-      var span = document.createElement('span');
-      span.textContent = "必須";
-      h3.appendChild(span);
-      formHowDelivery.appendChild(h3);
-      var selectWrap = document.createElement('div');
-      selectWrap.classList.add('select-wrap');
-      selectWrap.innerHTML = `<select id="how-to-delivery">
-      <option value="">---</value>
-      <option value="0">未定</value>
-      <option value="1">らくらくメルカリ便</value>
-      <option value="2">ゆうメール</value>
-      <option value="3">レターパック</value>
-      <option value="4">普通郵便（定型・定型外）</value>
-      <option value="5">クロネコヤマト</value>
-      <option value="6">ゆうパック</value>
-      <option value="7">クリックポスト</value>
-      <option value="8">ゆうパケット</value>
-      </select>`;
-      deliveryBox.appendChild(formHowDelivery);
-      deliveryBox.appendChild(selectWrap);
-    }else if (this.value === "" && document.getElementById('how-to-delivery') !== null) {
-      document.getElementById('how-to-delivery').parentNode.previousElementSibling.remove();
-      document.getElementById('how-to-delivery').parentNode.remove();
-      document.getElementById('how-to-delivery').remove();
-    };
-  });
+  // parentCategory.addEventListener('change', function() {
+  //   if (this.value !== "" && document.getElementById('item_child_category_id') === null) {
+  //     var selectWrap = document.createElement('div');
+  //     selectWrap.classList.add('select-wrap');
+  //     selectWrap.innerHTML = `<select id="second-category">
+  //     <option value="">---</value>
+  //     <option value="レディース">レディース</value>
+  //     <option value="メンズ">メンズ</value>
+  //     <option value="ベビー・キッズ">ベビー・キッズ</value>
+  //     <option value="インテリア・住まい・小物">インテリア・住まい・小物</value>
+  //     <option value="本・音楽・ゲーム">本・音楽・ゲーム</value>
+  //     </select>`;
+  //     categoryForm.appendChild(selectWrap);
+  //     var childCategory = document.getElementById('item_child_category_id');
+  //     childCategory.addEventListener('change', function() {
+  //       if (this.value !== "" && document.getElementById('item_grandchild_category_id') === null) {
+  //         var selectWrap = document.createElement('div');
+  //         selectWrap.classList.add('select-wrap');
+  //         selectWrap.innerHTML = `<select id="third-category">
+  //         <option value="">---</value>
+  //         <option value="">レディース</value>
+  //         <option value="">メンズ</value>
+  //         <option value="">ベビー・キッズ</value>
+  //         <option value="">インテリア・住まい・小物</value>
+  //         <option value="">本・音楽・ゲーム</value>
+  //         </select>`;
+  //         var grandchildCategory = document.getElementById('item_grandchild_category_id');
+  //         categoryForm.appendChild(selectWrap);
+  //       };
+  //     });
+  //     childCategory.addEventListener('change', function() {
+  //       var grandchildCategory = document.getElementById('item_grandchild_category_id');
+  //       if (this.value === "" && grandchildCategory != null) {
+  //         grandchildCategory.parentNode.remove();
+  //         grandchildCategory.remove();
+  //       };
+  //     });
+  //   }else if (this.value === "") {
+  //     var childCategory = document.getElementById('item_child_category_id');
+  //     childCategory.parentNode.remove();
+  //     childCategory.remove();
+  //     if (document.getElementById('item_grandchild_category_id') !== null) {
+  //       var grandchildCategory = document.getElementById('item_grandchild_category_id');
+  //       grandchildCategory.parentNode.remove();
+  //       grandchildCategory.remove();
+  //     };
+  //   };
+  // });
+
+  // var deliveryCost = document.getElementById('item_delivery_fee_payer');
+  // var deliveryBox = document.getElementById('delivery-box');
+  // deliveryCost.addEventListener('change', function() {
+  //   if (this.value !== "" && document.getElementById('how-to-delivery') === null) {
+  //     var formHowDelivery = document.createElement('div');
+  //     formHowDelivery.classList.add('form-group');
+  //     var h3 = document.createElement('h3');
+  //     h3.textContent = "配送の方法";
+  //     var span = document.createElement('span');
+  //     span.textContent = "必須";
+  //     h3.appendChild(span);
+  //     formHowDelivery.appendChild(h3);
+  //     var selectWrap = document.createElement('div');
+  //     selectWrap.classList.add('select-wrap');
+  //     selectWrap.innerHTML = `<select id="how-to-delivery">
+  //     <option value="">---</value>
+  //     <option value="0">未定</value>
+  //     <option value="1">らくらくメルカリ便</value>
+  //     <option value="2">ゆうメール</value>
+  //     <option value="3">レターパック</value>
+  //     <option value="4">普通郵便（定型・定型外）</value>
+  //     <option value="5">クロネコヤマト</value>
+  //     <option value="6">ゆうパック</value>
+  //     <option value="7">クリックポスト</value>
+  //     <option value="8">ゆうパケット</value>
+  //     </select>`;
+  //     deliveryBox.appendChild(formHowDelivery);
+  //     deliveryBox.appendChild(selectWrap);
+  //   }else if (this.value === "" && document.getElementById('how-to-delivery') !== null) {
+  //     document.getElementById('how-to-delivery').parentNode.previousElementSibling.remove();
+  //     document.getElementById('how-to-delivery').parentNode.remove();
+  //     document.getElementById('how-to-delivery').remove();
+  //   };
+  // });
 });
