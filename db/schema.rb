@@ -104,7 +104,6 @@ ActiveRecord::Schema.define(version: 20190503012540) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true, using: :btree
   end
-  
-  add_foreign_key "sns_credentials", "users"
 
+  add_foreign_key "sns_credentials", "users"
 end
