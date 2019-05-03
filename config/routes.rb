@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   resources :users
   post "statuses/pay", to: "statuses#pay"
   resources :statuses
-  resources :google,only: [:index]
+  resources :categories do
+    collection do
+      post "import"
+    end
+  end
 end
 

@@ -9,6 +9,10 @@ class CategoriesController < ApplicationController
   def new
   end
 
+  def import
+    Category.import(params[:category][:file])
+  end
+
   def create
   end
 

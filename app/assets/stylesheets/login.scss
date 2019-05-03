@@ -12,6 +12,7 @@ $color-red: #ea352d;
 @mixin login-btn{
   width: 326px;
   height: 48px;
+  text-align: center;
 }
 
 @mixin signup-fa-position($padding,$right,$top){
@@ -19,12 +20,6 @@ $color-red: #ea352d;
   padding: $padding;
   right: $right;
   top: $top;
-}
-
-.fa-facebook-official{
-  content: '\e013';
-  font-size: 20px;
-  @include signup-fa-position(0,68px,0)
 }
 
 .login-content{
@@ -54,12 +49,20 @@ $color-red: #ea352d;
       }
     }
     .login-sns{
-      @include login-box(328px,194px);
+      @include login-box(456px,181px);
       padding: 32px 64px;
       margin: 0;
       border: 1px solid $color-gray;
       .btn-sns-facebook{
         @include login-btn;
+        color: $color-white;
+        background: #385185;
+        line-height: 40px;
+        .fa-facebook-official{
+          content: '\e013';
+          font-size: 20px;
+          @include signup-fa-position(0,60px,0)
+        }
       }
       .btn-sns-google{
         @include login-btn;
@@ -68,6 +71,7 @@ $color-red: #ea352d;
         background-size: 8%;
         background-position: bottom 10px right 275px;
       }
+
     }
     .login-form{
       @include login-box(456px,350px);
