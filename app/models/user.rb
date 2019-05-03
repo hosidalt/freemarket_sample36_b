@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :items
   has_many :sns_credential
   has_many :cards
-end
+en
+
