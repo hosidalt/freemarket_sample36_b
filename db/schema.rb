@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190503012540) do
+ActiveRecord::Schema.define(version: 20190421061520) do
 
   create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",     null: false
@@ -62,6 +62,18 @@ ActiveRecord::Schema.define(version: 20190503012540) do
     t.index ["user_id"], name: "index_sns_credentials_on_user_id", using: :btree
   end
 
+  create_table "sns_credentials", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "token"
+    t.string   "email"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id", using: :btree
+  end
+
   create_table "statuses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "stage",      null: false
     t.integer  "item_id",    null: false
@@ -80,11 +92,7 @@ ActiveRecord::Schema.define(version: 20190503012540) do
     t.datetime "remember_created_at"
     t.datetime "created_at",                                        null: false
     t.datetime "updated_at",                                        null: false
-    t.integer  "credit",                                            null: false
-    t.string   "name"
-    t.string   "provider"
-    t.string   "token"
-    t.string   "uid"
+    t.string   "nickname",                                          null: false
     t.string   "family_name",                                       null: false
     t.string   "first_name",                                        null: false
     t.string   "kana_family_name",                                  null: false
@@ -96,15 +104,21 @@ ActiveRecord::Schema.define(version: 20190503012540) do
     t.string   "prefecture",                                        null: false
     t.string   "city",                                              null: false
     t.integer  "block_number",                                      null: false
-    t.string   "building_name"
+    t.string   "bilding_name"
     t.string   "tel"
     t.string   "profil_image"
     t.text     "profil_comment",         limit: 65535
+
+    t.string   "name"
+    t.string   "provider"
+    t.string   "token"
+    t.string   "uid"
+
+
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true, using: :btree
   end
-  
-  add_foreign_key "sns_credentials", "users"
 
+  add_foreign_key "sns_credentials", "users"
 end

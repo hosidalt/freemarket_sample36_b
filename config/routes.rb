@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   root 'items#index'
   resources :items
@@ -12,10 +12,13 @@ Rails.application.routes.draw do
   resources :users
   post "statuses/pay", to: "statuses#pay"
   resources :statuses
+<<<<<<< HEAD
+=======
   resources :categories do
     collection do
       post "import"
     end
   end
+>>>>>>> origin/certification
 end
 
