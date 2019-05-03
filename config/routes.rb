@@ -12,5 +12,13 @@ Rails.application.routes.draw do
   resources :users
   post "statuses/pay", to: "statuses#pay"
   resources :statuses
+<<<<<<< HEAD
+=======
+  resources :categories do
+    collection do
+      post "import"
+    end
+  end
+>>>>>>> origin/certification
 end
 

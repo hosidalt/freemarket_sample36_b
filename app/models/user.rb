@@ -5,8 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :omniauthable
   validates :nickname, presence: true, length: { maximum: 20 }
 
-  has_many :items
-  has_many :sns_credential
   has_many :cards
 end
 

@@ -6,7 +6,7 @@ class StatusesController < ApplicationController
   def show
     card = Card.where(user_id: 1).first
     if card.present?
-    Payjp.api_key = PAYJP_SECRET_KEY
+    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
     customer = Payjp::Customer.retrieve(card.customer_id)
     @card = card
     @default_card_information = customer.cards.retrieve(card.card_id)
@@ -20,7 +20,7 @@ class StatusesController < ApplicationController
 
   def pay
     card = Card.where(user_id: 1).first
-    Payjp.api_key = PAYJP_SECRET_KEY
+    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
     Payjp::Charge.create(
       amount: params[:statuses][:amount],
       customer: card.customer_id,
