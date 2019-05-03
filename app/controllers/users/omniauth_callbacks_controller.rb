@@ -19,7 +19,9 @@ class Users::OmniauthCallbacksController < ApplicationController
     @user = SnsCredential.find_for_google_oauth2(request.env["omniauth.auth"])
 
 
+
     if @user.persisted?
+      set_flash_message(:notice, :success, :kind => "google_oauth2") if is_navigational_format?
       sign_in_and_redirect @user, :event => :authentication
     else
       session["devise.google_oauth2_data"] = request.env["omniauth.auth"].except("extra")
