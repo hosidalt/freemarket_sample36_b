@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20190427095904) do
+ActiveRecord::Schema.define(version: 20190502034111) do
 
   create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",     null: false
@@ -48,12 +47,23 @@ ActiveRecord::Schema.define(version: 20190427095904) do
   end
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name",                     null: false
-    t.text     "introduce",  limit: 65535, null: false
-    t.integer  "price",                    null: false
-    t.integer  "seller_id",                null: false
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "name",                                 null: false
+    t.text     "introduce",              limit: 65535, null: false
+    t.integer  "price",                                null: false
+    t.integer  "seller_id",                            null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+    t.integer  "parent_category_id"
+    t.integer  "child_category_id"
+    t.integer  "grandchild_category_id"
+    t.integer  "shipping_method"
+    t.integer  "condition"
+    t.integer  "delivery_fee_payer"
+    t.integer  "area"
+    t.integer  "days_to_delivery"
+    t.index ["child_category_id"], name: "index_items_on_child_category_id", using: :btree
+    t.index ["grandchild_category_id"], name: "index_items_on_grandchild_category_id", using: :btree
+    t.index ["parent_category_id"], name: "index_items_on_parent_category_id", using: :btree
     t.index ["seller_id"], name: "index_items_on_seller_id", using: :btree
   end
 
@@ -92,7 +102,11 @@ ActiveRecord::Schema.define(version: 20190427095904) do
     t.datetime "remember_created_at"
     t.datetime "created_at",                                        null: false
     t.datetime "updated_at",                                        null: false
-    t.string   "nickname"
+    t.integer  "credit",                                            null: false
+    t.string   "name"
+    t.string   "provider"
+    t.string   "token"
+    t.string   "uid"
     t.string   "family_name",                                       null: false
     t.string   "first_name",                                        null: false
     t.string   "kana_family_name",                                  null: false
@@ -100,7 +114,6 @@ ActiveRecord::Schema.define(version: 20190427095904) do
     t.integer  "birth_year",                                        null: false
     t.integer  "birth_month",                                       null: false
     t.integer  "birth_day",                                         null: false
-    t.integer  "credit",                                            null: false
     t.string   "postal_code",                                       null: false
     t.string   "prefecture",                                        null: false
     t.string   "city",                                              null: false
@@ -109,18 +122,15 @@ ActiveRecord::Schema.define(version: 20190427095904) do
     t.string   "tel"
     t.string   "profil_image"
     t.text     "profil_comment",         limit: 65535
-    t.string   "name"
-    t.string   "provider"
-    t.string   "token"
-    t.string   "uid"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true, using: :btree
   end
 
-<<<<<<< HEAD
-  add_foreign_key "sns_credentials", "users"
-=======
   add_foreign_key "images", "items"
->>>>>>> ayukua/master
+  add_foreign_key "items", "categories", column: "child_category_id"
+  add_foreign_key "items", "categories", column: "grandchild_category_id"
+  add_foreign_key "items", "categories", column: "parent_category_id"
+  add_foreign_key "items", "users", column: "seller_id"
+  add_foreign_key "sns_credentials", "users"
 end
