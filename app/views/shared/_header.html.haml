@@ -1,3 +1,4 @@
+- @parentCategories = Category.where(id: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1001, 1101, 1201])
 %header
   .container
     .search-form.clearfix
@@ -12,17 +13,17 @@
           %li#search-category
             = link_to "カテゴリーから探す", root_path, class: "hover-blue"
             %ul.menu__first
-              - @firstCategories.each do |fc|
+              - @parentCategories.each do |pc|
                 %li.menu__first--element
-                  = link_to "#{fc.category}", root_path
+                  = link_to "#{pc.category}", root_path
                   %ul.menu__second
-                    - fc.children.each do |sc|
+                    - pc.children.each do |cc|
                       %li.menu__second--element
-                        = link_to "#{sc.category}", root_path
+                        = link_to "#{cc.category}", root_path
                         %ul.menu__third
-                          - sc.children.each do |tc|
+                          - cc.children.each do |gc|
                             %li
-                              = link_to "#{tc.category}", root_path
+                              = link_to "#{gc.category}", root_path
           %li#search-brand
             = link_to "ブランドから探す", root_path, class: "hover-blue"
             %ul#brand-list.none
