@@ -43,6 +43,7 @@
         flex-wrap: wrap;
         &__list{
           min-height: 60px;
+          max-height: 75px;
           background: lightblue;
           opacity: 0.5;
         }
