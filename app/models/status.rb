@@ -1,5 +1,4 @@
 class Status < ApplicationRecord
-  belongs_to :item
 
   validates :stage,     presence: true
   validates :item_id,   presence: true, uniqueness: true
