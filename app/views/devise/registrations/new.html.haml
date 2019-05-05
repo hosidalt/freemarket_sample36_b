@@ -1,0 +1,40 @@
+.signup-content
+  / 「header」部分テンプレート
+  = render "layouts/sub-header"
+  %main.signup-main
+    %section.signup-container
+      %h2.signup-container__head 新規会員登録
+      .signup-container__inner
+        .signup-container__inner--content
+
+          / 「メールアドレスで登録」ボタン
+          = link_to "https://www.mercari.com/jp/signup/registration/", class: 'btn-default btn-mail' do
+            = fa_icon("envelope-o")
+            メールアドレスで登録
+
+          / 「facebookで登録」ボタン
+          = link_to "facebook-login", url: 'https://www.facebook.com', class: 'btn-default btn-sns btn-sns-facebook' do
+            = fa_icon("facebook-official")
+            Facebookで登録
+
+          / 『googleで登録』ボタン
+          %button#google-login.btn-default.btn-sns.btn-sns-google
+            Googleで登録
+    %form#login_form_facebook{action: "/jp/signup/facebook/", method: "POST", novalidate: "novalidate"}
+      %input{name: "__csrf_value", type: "hidden", value: "2ec68ad534d52522d2e4a29ef57d8feb73284747f5beb8d168bc371a4b78fb4444251329eca2bb602f98ef007991b51fd137ea6e3673a776dd368d4e07ff9c52b"}/
+      %input{name: "nickname", type: "hidden", value: ""}/
+      %input{name: "email", type: "hidden", value: ""}/
+      %input{name: "facebook_user_id", type: "hidden", value: ""}/
+      %input{name: "facebook_access_token", type: "hidden", value: ""}/
+      %input{name: "login_type", type: "hidden", value: "facebook"}/
+    %form#login_form_google{action: "/jp/signup/google/", method: "POST", novalidate: "novalidate"}
+      %input{name: "__csrf_value", type: "hidden", value: "2ec68ad534d52522d2e4a29ef57d8feb73284747f5beb8d168bc371a4b78fb4444251329eca2bb602f98ef007991b51fd137ea6e3673a776dd368d4e07ff9c52b"}/
+      %input{name: "nickname", type: "hidden", value: ""}/
+      %input{name: "email", type: "hidden", value: ""}/
+      %input{name: "google_user_id", type: "hidden", value: ""}/
+      %input{name: "google_access_token", type: "hidden", value: ""}/
+      %input{name: "login_type", type: "hidden", value: "google"}/
+    %input#google_client_id{type: "hidden", value: "238694260676-l0gp5j3hs9p8l2hjmnt126q0b4iin34r.apps.googleusercontent.com"}/
+    %input#facebook_app_id{type: "hidden", value: "466308336793848"}/
+  / 「footer」部分テンプレート
+  = render "layouts/sub-footer"
