@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190503090019) do
+ActiveRecord::Schema.define(version: 20190503112953) do
 
   create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",     null: false
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20190503090019) do
     t.integer  "item_id"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.index ["item_id"], name: "fk_rails_63c410e8ba", using: :btree
   end
 
   create_table "item_categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -121,9 +122,12 @@ ActiveRecord::Schema.define(version: 20190503090019) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "images", "products", column: "item_id"
+  add_foreign_key "item_categories", "products", column: "item_id"
   add_foreign_key "products", "categories", column: "child_category_id"
   add_foreign_key "products", "categories", column: "grandchild_category_id"
   add_foreign_key "products", "categories", column: "parent_category_id"
   add_foreign_key "products", "users", column: "seller_id"
   add_foreign_key "sns_credentials", "users"
+  add_foreign_key "statuses", "products", column: "item_id"
 end
