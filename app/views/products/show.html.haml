@@ -1,15 +1,5 @@
 = render "shared/header"
-%nav.bread-crumbs
-  %ul.bread-crumbs__ul
-    %li.bread-crumbs__ul-list
-      = link_to root_path do
-        %span.bread-crumbs__ul-list--title
-          メルカリ
-      = fa_icon("angle-right")
-    %li.bread-crumbs__ul-list
-      %span.bread-crumbs__ul-list--title
-        ○○○○○○○○
-
+= render "products/bread-crumbs"
 %section.item-box
   %h1.item-box__header
     = @item.name
