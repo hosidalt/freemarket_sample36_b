@@ -1,5 +1,5 @@
 class Image < ApplicationRecord
-  belongs_to :product
+  belongs_to :product, foreign_key: "item_id"
   mount_uploader :image, ImageUploader
 
   def self.create_images_by(item_params)
