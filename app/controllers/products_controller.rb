@@ -34,9 +34,11 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @item = Product.find(params[:id])
-    @item.destroy
-    redirect_to root_path
+    ActiveRecord::Base.transaction do
+      @item = Product.find(params[:id])
+      @item.destroy
+      redirect_to root_path
+    end
   end
 
   private
