@@ -34,10 +34,11 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    ActiveRecord::Base.transaction do
-      @item = Product.find(params[:id])
-      @item.destroy
+    @item = Product.find(params[:id])
+    if @item.destroy
       redirect_to root_path
+    else
+      render :show
     end
   end
 
