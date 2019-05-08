@@ -6,5 +6,6 @@ class User < ApplicationRecord
   validates :nickname, presence: true, length: { maximum: 20 }
 
   has_many :cards
+  has_many :products , foreign_key: "seller_id"
 end
 
