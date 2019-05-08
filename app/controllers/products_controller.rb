@@ -7,9 +7,9 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @item = Product.find(params[:id])
-    @images = @item.images
-    @seller = User.find(@item.seller_id)
+    @product = Product.find(params[:id])
+    @images = @product.images
+    @seller = User.find(@product.seller_id)
     @seller_items = Product.where(seller_id: @seller.id).where.not(id: @seller.id)
   end
 
@@ -34,8 +34,8 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @item = Product.find(params[:id])
-    if @item.destroy
+    @product = Product.find(params[:id])
+    if @product.destroy
       redirect_to root_path
     else
       render :show
