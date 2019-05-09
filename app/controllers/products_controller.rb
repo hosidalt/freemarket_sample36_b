@@ -1,9 +1,14 @@
 class ProductsController < ApplicationController
   def index
-    @firstCategories = Category.where(id: [1,2,3,4,5,6,7,8,9,1001,1101,1201,10])
-    # @firstCategories = Category.where(ancestry: nil)
-    # @secondCategories = Category.where(ancestry: @firstCategories.ids)
-    # @thirdCategories = Category.where(ancestry: @secondCategories.ids)
+    # 各カテゴリーの商品を無作為に４つずつ取得
+    @products_ladies = Product.where(parent_category_id: 1).order("RAND()").limit(4)
+    @products_mans = Product.where(parent_category_id: 2).order("RAND()").limit(4)
+    @products_kids = Product.where(parent_category_id: 3).order("RAND()").limit(4)
+    @products_interiors = Product.where(parent_category_id: 4).order("RAND()").limit(4)
+    @products_books = Product.where(parent_category_id: 5).order("RAND()").limit(4)
+    @products_toys = Product.where(parent_category_id: 6).order("RAND()").limit(4)
+    @products_perfumes = Product.where(parent_category_id: 7).order("RAND()").limit(4)
+    @products_appliances = Product.where(parent_category_id: 8).order("RAND()").limit(4)
   end
 
   def show
