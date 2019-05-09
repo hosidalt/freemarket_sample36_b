@@ -7,5 +7,6 @@ class User < ApplicationRecord
 
   has_many :cards
   has_many :products , foreign_key: "seller_id"
+  has_many :statuses , foreign_key: "buyer_id"
 end
 
