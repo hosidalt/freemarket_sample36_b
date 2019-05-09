@@ -18,7 +18,7 @@ class SnsCredential < ApplicationRecord
       user = User.new(
                        nickname: auth.info.name,
                        email:    auth.info.email,
-                       )
+                      )
 
     end
     user
@@ -38,7 +38,7 @@ class SnsCredential < ApplicationRecord
       user = User.new(
                        nickname: auth.info.name,
                        email:    auth.info.email,
-                       )
+                      )
 
     end
     # メソッドの最後でuserを返す
