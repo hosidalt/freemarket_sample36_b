@@ -1,18 +1,19 @@
 require 'rails_helper'
 
+
 RSpec.describe UsersController, type: :controller do
-  describe "GET #show" do
+  describe "GET #index" do
     # userをFactoryBotで作る
-    let(:user) { FactoryBot.build(:user) }
-    # 作ったユーザでログインする
     before do
-      login_user user
+      user = FactoryBot.create(:user)
+    # 作ったユーザでログインする
+      sign_in user
     end
 
     it "can get it" do
-      get :show, id: 1
+      get :index
       # 出力結果
-      p response
+      expect(response).to render_template :index
     end
   end
 end
