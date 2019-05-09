@@ -1,21 +1,24 @@
 FactoryBot.define do
   factory :user do
-    id                    {"1"}
-    nickname              {"abe"}
-    email                 {"kkk@gmail.com"}
-    password              {"00000000"}
-    password_confirmation {"00000000"}
-    family_name           {"山田"}
-    first_name            {"太郎"}
-    kana_family_name      {"ヤマダ"}
-    kana_first_name       {"タロウ"}
-    birth_year            {"2000"}
-    birth_month           {"1"}
-    birth_day             {"20"}
-    postal_code           {"111-1111"}
-    prefecture            {"兵庫県"}
-    city                  {"神戸市"}
-    block_number          {"1"}
+    password = Faker::Internet.password(8)
+    first_name = Faker::Name.first_name
+    family_name = Faker::Name.last_name
+    id                    {Faker::Number.number(3)}
+    nickname              {Faker::Name.name}
+    email                 {Faker::Internet.email}
+    password              {password}
+    password_confirmation {password}
+    family_name           {family_name}
+    first_name            {first_name}
+    kana_family_name      {family_name}
+    kana_first_name       {first_name}
+    birth_year            {Faker::Number.between(2, 131)}
+    birth_month           {Faker::Number.between(2, 13)}
+    birth_day             {Faker::Number.between(2, 32)}
+    postal_code           {Faker::Address.postcode}
+    prefecture            {Faker::Address.community}
+    city                  {Faker::Address.city}
+    block_number          {Faker::Address.building_number}
   end
 
 end
