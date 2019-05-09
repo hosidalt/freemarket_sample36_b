@@ -1,14 +1,14 @@
 class ProductsController < ApplicationController
   def index
     # 各カテゴリーの商品を無作為に４つずつ取得
-    @products_ladies = Product.random(1)
-    @products_mans = Product.random(2)
-    @products_kids = Product.random(3)
-    @products_interiors = Product.random(4)
-    @products_books = Product.random(5)
-    @products_toys = Product.random(6)
-    @products_perfumes = Product.random(7)
-    @products_appliances = Product.random(8)
+    @products_ladies = Product.category_product_random(1)
+    @products_mans = Product.category_product_random(2)
+    @products_kids = Product.category_product_random(3)
+    @products_interiors = Product.category_product_random(4)
+    @products_books = Product.category_product_random(5)
+    @products_toys = Product.category_product_random(6)
+    @products_perfumes = Product.category_product_random(7)
+    @products_appliances = Product.category_product_random(8)
   end
 
   def show
