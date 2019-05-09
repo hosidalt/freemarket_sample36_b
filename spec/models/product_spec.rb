@@ -100,6 +100,5 @@ describe Product do
       product.valid?
       expect(product.errors[:grandchild_category_id]).to include("can't be blank")
     end
-
   end
 end
