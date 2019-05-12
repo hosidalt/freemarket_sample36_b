@@ -75,7 +75,7 @@
       設定
     %ul.side-bar__nav__list
       %li.side-bar__nav__list-content
-        = link_to mypages_path, class: 'side-bar__nav__list-content__item' do
+        = link_to profiles_path, class: 'side-bar__nav__list-content__item' do
           プロフィール
           %i.fa.fa-chevron-right
       %li.side-bar__nav__list-content
@@ -91,7 +91,7 @@
           メール・パスワード
           %i.fa.fa-chevron-right
       %li.side-bar__nav__list-content
-        = link_to mypages_path, class: 'side-bar__nav__list-content__item' do
+        = link_to identifications_path, class: 'side-bar__nav__list-content__item' do
           本人情報
           %i.fa.fa-chevron-right
       %li.side-bar__nav__list-content
@@ -99,6 +99,6 @@
           電話番号の確認
           %i.fa.fa-chevron-right
       %li.side-bar__nav__list-content
-        = link_to root_path, class: 'side-bar__nav__list-content__item' do
+        = link_to logouts_path, class: 'side-bar__nav__list-content__item' do
           ログアウト
           %i.fa.fa-chevron-right

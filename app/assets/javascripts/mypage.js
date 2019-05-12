@@ -15,10 +15,3 @@ $(function(){
   });
 });
 
-$(function(){
-  $(".mypage-nav__list-item").on("click", function(){
-    var index = $(".mypage-nav__list-item").index(this);
-    $(".mypage-nav__list-item").removeClass("active");
-    $(this).addClass("active");
-  });
-});
